@@ -1,4 +1,4 @@
-package com.example.water_nn.presentation
+package com.example.water_nn.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
