@@ -10,13 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Water_nn">
         <activity
-            android:name=".presentation.authorisation.AuthActivity"
-            android:exported="true" />
-        <activity
             android:name=".presentation.splash.SplashActivity"
-            android:exported="true" />
-        <activity
-            android:name=".presentation.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".presentation.authorisation.AuthActivity"
+            android:exported="true" />
+        <activity
+            android:name=".presentation.main.MainActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

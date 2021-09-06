@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.water_nn.presentation.main.order.OrderFragment"
+        android:label="@string/orders"
+        tools:layout="@layout/fragment_order" />
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.example.water_nn.presentation.main.shop.ShopFragment"
+        android:label="@string/shop"
+        tools:layout="@layout/fragment_shop" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.water_nn.presentation.main.info.InfoFragment"
+        android:label="@string/info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.water_nn.presentation.main.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
