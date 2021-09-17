@@ -1,10 +1,8 @@
 package com.example.water_nn.data.database.entity
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.PrimaryKey
-import com.example.water_nn.domain.modules.DeliveryDay
-import com.example.water_nn.domain.modules.DeliveryTime
+import androidx.room.*
+import com.example.water_nn.domain.models.DeliveryDay
+import com.example.water_nn.domain.models.DeliveryTime
 
 @Entity(tableName = "order_table")
 data class Order(
@@ -19,7 +17,7 @@ data class Order(
     @ColumnInfo(name = "emptyBottlePrice") val emptyBottlePrice: Double = 200.0,
 //    @Embedded val shopOrder: List<AdditionalItem>,
     @ColumnInfo(name = "deliveryDay") val deliveryDay: DeliveryDay,
-    @ColumnInfo(name = "deliveryTime") val deliveryTime: DeliveryTime,
+    @ColumnInfo(name = "deliveryTime") val deliveryTime: List<DeliveryTime>,
     @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "totalPrice") val totalPrice: Double,
 )

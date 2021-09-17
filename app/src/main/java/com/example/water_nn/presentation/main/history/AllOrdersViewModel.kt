@@ -1,10 +1,9 @@
-package com.example.water_nn.presentation.main.order
+package com.example.water_nn.presentation.main.history
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.water_nn.data.database.entity.Order
-import com.example.water_nn.domain.usecases.AddNewOrderUseCase
 import com.example.water_nn.domain.usecases.DeleteOrderUseCase
 import com.example.water_nn.domain.usecases.GetAllOrdersUseCase
 import com.example.water_nn.domain.usecases.GetOrderUseCase
@@ -13,29 +12,27 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-class OrderViewModel(
-    private val addNewOrderUseCase: AddNewOrderUseCase,
+class AllOrdersViewModel(
     private val deleteOrderUseCase: DeleteOrderUseCase,
     private val getOrderUseCase: GetOrderUseCase,
     private val getAllOrdersUseCase: GetAllOrdersUseCase
-) : ViewModel(), Contract.IOrderViewModel {
+) : ViewModel(), Contract.IAllOrdersViewModel {
 
+    override val order: MutableLiveData<Order> by lazy { MutableLiveData() }
     override val orderList: MutableLiveData<List<Order>> by lazy { MutableLiveData() }
 
-    override suspend fun addOrder(order: Order) {
-        viewModelScope.launch {
-            addNewOrderUseCase.execute(order)
-        }
-    }
-
-    override suspend fun deleteOrder(order: Order) {
-        viewModelScope.launch {
+    override fun deleteOrder(order: Order) {
+        viewModelScope.launch(Dispatchers.IO)  {
             deleteOrderUseCase.execute(order)
         }
     }
 
-    override suspend fun getOrder(id: String): Order {
-        return getOrderUseCase.execute(id)
+    override fun getOrder(id: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            getOrderUseCase.execute(id).let {
+                order.postValue(it)
+            }
+        }
     }
 
     override fun getAllOrders() {

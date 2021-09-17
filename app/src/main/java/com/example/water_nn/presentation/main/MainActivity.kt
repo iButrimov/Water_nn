@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.profileFragment
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+//        setupActionBarWithNavController(navController, appBarConfiguration)
 
         bottomNavigationView.setupWithNavController(navController)
     }
