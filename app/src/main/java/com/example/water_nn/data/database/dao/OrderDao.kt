@@ -16,13 +16,13 @@ interface OrderDao {
     @Query("SELECT * FROM order_table ORDER BY id DESC")
     fun getAllOrders(): Flow<List<Order>>
 
-    @Query("SELECT * FROM order_table WHERE id IN (:userIds)")
-    fun loadAllByIds(userIds: IntArray): List<Order>
+//    @Query("SELECT * FROM order_table WHERE id IN (:userIds)")
+//    fun loadAllByIds(userIds: IntArray): List<Order>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun addOrder(order: Order)
 
     @Delete
-    fun delete(order: Order)
+    fun deleteOrder(order: Order)
 
 }

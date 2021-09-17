@@ -5,11 +5,9 @@ import androidx.room.Room
 import com.example.water_nn.data.database.AppDatabase
 import com.example.water_nn.data.repositories.OrderRepository
 import com.example.water_nn.domain.repositories.IRepository
-import com.example.water_nn.domain.usecases.AddNewOrderUseCase
-import com.example.water_nn.domain.usecases.DeleteOrderUseCase
-import com.example.water_nn.domain.usecases.GetAllOrdersUseCase
-import com.example.water_nn.domain.usecases.GetOrderUseCase
-import com.example.water_nn.presentation.main.order.OrderViewModel
+import com.example.water_nn.domain.usecases.*
+import com.example.water_nn.presentation.main.history.AllOrdersViewModel
+import com.example.water_nn.presentation.main.history.NewOrderViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.bind
 import org.koin.dsl.module
@@ -20,14 +18,16 @@ private val dataModule = module {
 }
 
 private val domainModule = module {
-    factory { AddNewOrderUseCase(get()) }
+    factory { CreateNewOrderUseCase(get()) }
     factory { GetOrderUseCase(get()) }
     factory { GetAllOrdersUseCase(get()) }
     factory { DeleteOrderUseCase(get()) }
+    factory { ValidateNewOrderDataUseCase(get()) }
 }
 
 private val viewModelModule = module {
-    viewModel { OrderViewModel(get(), get(), get(), get()) }
+    viewModel { AllOrdersViewModel(get(), get(), get()) }
+    viewModel { NewOrderViewModel(get(), get()) }
 }
 
 val modules = listOf(

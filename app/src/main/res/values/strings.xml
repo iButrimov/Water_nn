@@ -7,4 +7,6 @@
     <string name="shop">Магазин</string>
     <string name="info">О нас</string>
     <string name="profile">Профиль</string>
+    <string name="create_new_order">Создать новый заказ</string>
+
 </resources>

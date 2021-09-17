@@ -7,9 +7,13 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.water_nn.presentation.main.order.OrderFragment"
+        android:name="com.example.water_nn.presentation.main.history.AllOrdersFragment"
         android:label="@string/orders"
-        tools:layout="@layout/fragment_order" />
+        tools:layout="@layout/fragment_all_orders" >
+        <action
+            android:id="@+id/action_mainFragment_to_newOrderFragment"
+            app:destination="@id/newOrderFragment" />
+    </fragment>
     <fragment
         android:id="@+id/shopFragment"
         android:name="com.example.water_nn.presentation.main.shop.ShopFragment"
@@ -25,4 +29,9 @@
         android:name="com.example.water_nn.presentation.main.profile.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/newOrderFragment"
+        android:name="com.example.water_nn.presentation.main.history.NewOrderFragment"
+        android:label="fragment_new_order"
+        tools:layout="@layout/fragment_new_order" />
 </navigation>
