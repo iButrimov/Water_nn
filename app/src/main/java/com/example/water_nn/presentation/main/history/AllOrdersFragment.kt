@@ -19,7 +19,12 @@ class AllOrdersFragment : Fragment(R.layout.fragment_all_orders) {
     private val binding get() = _binding!!
 
     private val allOrdersViewModel: Contract.IAllOrdersViewModel by viewModel<AllOrdersViewModel>()
-    private val adapter = OrdersAdapter()
+    private val adapter = ordersAdapterDelegates {
+        val args = NewOrderFragmentArgs(
+            id = it.toString()
+        ).toBundle()
+        findNavController().navigate(R.id.action_mainFragment_to_newOrderFragment, args)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,13 +42,16 @@ class AllOrdersFragment : Fragment(R.layout.fragment_all_orders) {
 
         allOrdersViewModel.getAllOrders()
 
-        allOrdersViewModel.orderList.observe(viewLifecycleOwner) {
-            adapter.list = it
+        allOrdersViewModel.orderList.observe(viewLifecycleOwner) { orders ->
+            adapter.items = orders.map {
+                ItemOrder.CompletedOrder(it)
+            }
             adapter.notifyDataSetChanged()
         }
 
         binding.createNewOrderButton.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_newOrderFragment)
+            val args = NewOrderFragmentArgs(id = "").toBundle()
+            findNavController().navigate(R.id.action_mainFragment_to_newOrderFragment, args)
         }
 
         val itemTouchHelperCallback =
@@ -58,7 +66,7 @@ class AllOrdersFragment : Fragment(R.layout.fragment_all_orders) {
                 ): Boolean = false
 
                 override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                    allOrdersViewModel.deleteOrder(adapter.getOrderById(viewHolder.bindingAdapterPosition))
+                    allOrdersViewModel.deleteOrder((adapter.items[viewHolder.bindingAdapterPosition] as ItemOrder.CompletedOrder).order)
                 }
             }
         val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
@@ -68,6 +76,7 @@ class AllOrdersFragment : Fragment(R.layout.fragment_all_orders) {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.allOrdersRecyclerView.adapter = null
         _binding = null
     }
 }

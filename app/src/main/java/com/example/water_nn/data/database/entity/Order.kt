@@ -18,8 +18,8 @@ data class Order(
 //    @Embedded val shopOrder: List<AdditionalItem>,
     @ColumnInfo(name = "deliveryDay") val deliveryDay: DeliveryDay,
     @ColumnInfo(name = "deliveryTime") val deliveryTime: List<DeliveryTime>,
-    @ColumnInfo(name = "description") val description: String,
-    @ColumnInfo(name = "totalPrice") val totalPrice: Double,
+    @ColumnInfo(name = "description") val comment: String,
+    @ColumnInfo(name = "totalPrice") val totalPrice: Float,
 )
 
 data class AdditionalItem(
