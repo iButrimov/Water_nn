@@ -33,5 +33,9 @@
         android:id="@+id/newOrderFragment"
         android:name="com.example.water_nn.presentation.main.history.NewOrderFragment"
         android:label="fragment_new_order"
-        tools:layout="@layout/fragment_new_order" />
+        tools:layout="@layout/fragment_new_order" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
 </navigation>
