@@ -59,4 +59,18 @@ interface Contract {
         var priceFullBottle: Double
         var priceEmptyBottle: Double
     }
+
+    interface IProfileViewModel {
+        val userInfoLiveData: MutableLiveData<UserInformation>
+        var name: String
+        var phoneNumber: String
+        var address: String
+        var buildingNumber: String
+        var floorNumber: String
+        var apartmentNumber: String
+        fun getUserInfo()
+
+        fun saveUserInformation(userInformation: UserInformation)
+        val btnIsActive: MutableLiveData<Boolean>
+    }
 }

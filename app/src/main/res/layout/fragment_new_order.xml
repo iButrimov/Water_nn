@@ -19,12 +19,15 @@
 
     <Button
         android:id="@+id/make_order_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Заказать"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/make_order_button"
+        android:text="@string/NEW_ORDER_MAKE_ORDER_BUTTON_TEXT"
+        android:textAllCaps="false"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/fill_user_info_button"

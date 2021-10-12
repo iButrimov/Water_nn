@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.water_nn.R
-import com.example.water_nn.databinding.FragmentShopBinding
+import com.example.water_nn.databinding.FragmentCatalogBinding
 
-class ShopFragment : Fragment(R.layout.fragment_shop) {
+class ShopFragment : Fragment(R.layout.fragment_catalog) {
 
-    private var _binding: FragmentShopBinding? = null
+    private var _binding: FragmentCatalogBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,7 +18,7 @@ class ShopFragment : Fragment(R.layout.fragment_shop) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentShopBinding.inflate(inflater, container, false)
+        _binding = FragmentCatalogBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

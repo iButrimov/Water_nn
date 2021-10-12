@@ -3,10 +3,36 @@
     <string name="splash_fragment">Нестарица</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="orders">Мои заказы</string>
-    <string name="shop">Магазин</string>
-    <string name="info">О нас</string>
-    <string name="profile">Профиль</string>
-    <string name="create_new_order">Создать новый заказ</string>
+    <string name="ORDERS">Мои заказы</string>
+    <string name="CATALOG">Каталог</string>
+    <string name="BASKET">Корзина</string>
+    <string name="PROFILE">Профиль</string>
 
+    <string name="AUTH_SCREEN">Экран авторизации</string>
+    <string name="AUTH_GREETING_TEXT">Привет!</string>
+    <string name="AUTH_REGISTRATION_BUTTON_TEXT">Зарегистрироваться</string>
+    <string name="NAME_FIELD_SHOULD_BE_FILLED_TEXT">Поле с именем должно быть заполнено</string>
+    <string name="PHONE_FIELD_SHOULD_BE_FILLED_TEXT">Поле с телефоном должно быть заполнено</string>
+
+    <string name="CREATE_NEW_ORDER">Создать новый заказ</string>
+
+    <string name="NEW_ORDER_MAKE_ORDER_BUTTON_TEXT">Заказать</string>
+    <string name="NEW_ORDER_COMMENT_TEXT">Комментарий</string>
+
+    <string name="PROFILE_USER_INFO_HEADER">Данные пользователя</string>
+    <string name="PROFILE_NAME_HINT">Имя</string>
+    <string name="PROFILE_PHONE_NUMBER_HINT">Телефон</string>
+    <string name="PROFILE_ADDRESS_DELIVERY_HEADER">Адрес доставки</string>
+    <string name="PROFILE_STREET_HINT">Улица</string>
+    <string name="PROFILE_BUILDING_NUMBER_HINT">Дом</string>
+    <string name="PROFILE_FLOOR_NUMBER_HINT">Этаж</string>
+    <string name="PROFILE_APARTMENT_NUMBER_HINT">Квартира</string>
+    <string name="PROFILE_PAYMENT_METHOD_HEADER">Способ оплаты</string>
+    <string name="SAVE_BUTTON_TEXT">Сохранить</string>
+
+    <string name="ORDERS_EMPTY_LIST_TEXT">У вас пока нет заказов</string>
+
+    <string name="GRATITUDE_UPPER_TEXT">Спасибо!</string>
+    <string name="GRATITUDE_LOWER_TEXT">Ваш заказ успешно создан!</string>
+    <string name="GRATITUDE_CONTINUE_BUTTON_TEXT">Продолжить</string>
 </resources>

@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.water_nn.R
 import com.example.water_nn.databinding.FragmentNewOrderBinding
 import com.example.water_nn.domain.models.DeliveryDay
 import com.example.water_nn.domain.models.DeliveryTime
@@ -63,8 +63,8 @@ class NewOrderFragment : Fragment() {
             newOrderViewModel.getOrderById(id = args.id)
             binding.makeOrderButton.text = "Повторить заказ"
         } else (
-            newOrderViewModel.getEmptyOrder()
-        )
+                newOrderViewModel.getEmptyOrder()
+                )
 
         binding.makeOrderButton.setOnClickListener {
             orderData = OrderData(
@@ -90,7 +90,8 @@ class NewOrderFragment : Fragment() {
                 qtyFullBottle = 3
                 qtyEmptyBottle = 3
                 deliveryDay = DeliveryDay.TOMORROW
-                deliveryTimes = mutableListOf(DeliveryTime.NOON, DeliveryTime.AFTERNOON, DeliveryTime.EVENING)
+                deliveryTimes =
+                    mutableListOf(DeliveryTime.NOON, DeliveryTime.AFTERNOON, DeliveryTime.EVENING)
                 comment = "Домофон не работает"
             }
         }
@@ -106,8 +107,7 @@ class NewOrderFragment : Fragment() {
 //                binding.phoneNumberField.editText?.error = "Поле с телефоном должно быть заполнено" //вынести в ресурсы
             }
             if (it.contains(ValidationStatus.SUCCESS)) {
-                Toast.makeText(context, "Заказ отпрвлен", Toast.LENGTH_SHORT).show()
-                findNavController().popBackStack()
+                findNavController().navigate(R.id.action_newOrderFragment_to_gratitudeScreenFragment)
             }
         }
         newOrderViewModel.newOrderItems.observe(viewLifecycleOwner) {
