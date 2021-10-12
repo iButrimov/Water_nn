@@ -10,6 +10,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="vertical"
         android:paddingHorizontal="20dp">
 
@@ -18,18 +19,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Имя"
+            android:hint="@string/PROFILE_NAME_HINT"
             android:maxLines="1"
             android:textSize="16sp"
             app:errorEnabled="true" />
-
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/addressField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Адрес доставки"
+            android:hint="@string/PROFILE_ADDRESS_DELIVERY_HEADER"
             android:maxLines="1"
             android:textSize="16sp"
             app:errorEnabled="true">
@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Телефон"
+            android:hint="@string/PROFILE_PHONE_NUMBER_HINT"
             android:maxLines="1"
             android:textSize="16sp"
             app:errorEnabled="true">

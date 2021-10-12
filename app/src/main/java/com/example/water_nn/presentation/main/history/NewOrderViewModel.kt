@@ -13,7 +13,6 @@ import com.example.water_nn.presentation.main.Contract
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
 import java.util.*
 
 class NewOrderViewModel(
@@ -86,12 +85,12 @@ class NewOrderViewModel(
                         phoneNumber = phoneNumber,
                         quantityWater = quantityFullBottle,
                         quantityEmptyBottle = quantityEmptyBottle,
-                        waterPrice = 180.0,         //hardcoded
-                        emptyBottlePrice = 200.0,   //hardcoded
+                        waterPrice = priceFullBottle,
+                        emptyBottlePrice = priceEmptyBottle,
                         deliveryDay = deliveryDay,
                         deliveryTime = deliveryTime,
                         comment = comment,
-                        totalPrice = 360.0f          //hardcoded
+                        totalPrice = calculateTotalPrice()
                     )
                 }
 
@@ -148,7 +147,7 @@ class NewOrderViewModel(
     override fun minusQtyFullBottle() {
         if (qtyFullBottle > 1) {
             qtyFullBottle--
-            if(qtyFullBottle < qtyEmptyBottle) {
+            if (qtyFullBottle < qtyEmptyBottle) {
                 qtyEmptyBottle--
             }
         }
@@ -188,6 +187,10 @@ class NewOrderViewModel(
 
         priceFullBottle = qtyFullBottle * fullBottlePrice
         priceEmptyBottle = (qtyFullBottle - qtyEmptyBottle) * emptyBottlePrice
+    }
+
+    private fun calculateTotalPrice(): Double {
+        return priceFullBottle + priceEmptyBottle
     }
 
     override suspend fun isOrderDataValid(orderData: OrderData): Boolean {

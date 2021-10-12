@@ -1,11 +1,7 @@
 package com.example.water_nn.domain.repositories
 
-import android.content.SharedPreferences
 import com.example.water_nn.data.database.entity.Order
-import com.example.water_nn.domain.models.AuthData
-import com.example.water_nn.domain.models.AuthValidationStatus
-import com.example.water_nn.domain.models.OrderData
-import com.example.water_nn.domain.models.ValidationStatus
+import com.example.water_nn.domain.models.*
 import kotlinx.coroutines.flow.Flow
 
 interface IRepository {
@@ -22,6 +18,8 @@ interface IRepository {
         suspend fun validationAuthDataList(authData: AuthData): List<AuthValidationStatus>
         suspend fun createNewUser(authData: AuthData)
         suspend fun checkUserCreated(): Boolean
+        suspend fun getUserInfo(): UserInformation
+        suspend fun saveUserInformation(userInformation: UserInformation)
     }
 
     interface PriceRepository {

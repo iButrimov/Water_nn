@@ -1,4 +1,4 @@
-package com.example.water_nn.presentation.main.info
+package com.example.water_nn.presentation.main.basket
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.water_nn.R
-import com.example.water_nn.databinding.FragmentInfoBinding
+import com.example.water_nn.databinding.FragmentBasketBinding
 
-class InfoFragment : Fragment(R.layout.fragment_info) {
+class BasketFragment : Fragment(R.layout.fragment_basket) {
 
-    private var _binding: FragmentInfoBinding? = null
+    private var _binding: FragmentBasketBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,7 +18,7 @@ class InfoFragment : Fragment(R.layout.fragment_info) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentInfoBinding.inflate(inflater, container, false)
+        _binding = FragmentBasketBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

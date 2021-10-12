@@ -15,7 +15,7 @@ object NewOrderUtils {
         qtyEmpty: Int,
         deliveryDay: DeliveryDay,
         deliveryTimes: List<DeliveryTime>,
-        comment: String
+        comment: String?
     ): List<ItemOrderCard> {
         return mutableListOf<ItemOrderCard>().apply {
             add(buildOrderUserInfo(name, address, phoneNumber))
@@ -62,10 +62,10 @@ object NewOrderUtils {
     }
 
     private fun buildCommentInfo(
-        comment: String
+        comment: String?
     ): ItemOrderCard.OrderCommentInfo {
         return ItemOrderCard.OrderCommentInfo(
-            comment = comment
+            comment = comment ?: ""
         )
     }
 }

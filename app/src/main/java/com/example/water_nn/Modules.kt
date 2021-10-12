@@ -12,6 +12,7 @@ import com.example.water_nn.domain.usecases.*
 import com.example.water_nn.presentation.authorisation.AuthViewModel
 import com.example.water_nn.presentation.main.history.AllOrdersViewModel
 import com.example.water_nn.presentation.main.history.NewOrderViewModel
+import com.example.water_nn.presentation.main.profile.ProfileViewModel
 import com.example.water_nn.presentation.splash.SplashViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.bind
@@ -36,6 +37,8 @@ private val domainModule = module {
     factory { CheckUserCreatedUseCase(get()) }
     factory { GetPriceFullBottleUseCase(get()) }
     factory { GetPriceEmptyBottleUseCase(get()) }
+    factory { GetUserInfoUseCase(get()) }
+    factory { SaveUserInformationUseCase(get()) }
 }
 
 private val viewModelModule = module {
@@ -43,6 +46,7 @@ private val viewModelModule = module {
     viewModel { NewOrderViewModel(get(), get(), get(), get(), get()) }
     viewModel { AuthViewModel(get(), get()) }
     viewModel { SplashViewModel(get()) }
+    viewModel { ProfileViewModel(get(), get()) }
 }
 
 val modules = listOf(

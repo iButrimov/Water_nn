@@ -19,7 +19,7 @@ data class Order(
     @ColumnInfo(name = "deliveryDay") val deliveryDay: DeliveryDay,
     @ColumnInfo(name = "deliveryTime") val deliveryTime: List<DeliveryTime>,
     @ColumnInfo(name = "description") val comment: String,
-    @ColumnInfo(name = "totalPrice") val totalPrice: Float,
+    @ColumnInfo(name = "totalPrice") val totalPrice: Double,
 )
 
 data class AdditionalItem(
