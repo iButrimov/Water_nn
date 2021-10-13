@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -19,6 +22,10 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
     private var _binding: FragmentSplashBinding? = null
     private val binding get() = _binding!!
+    private lateinit var splashAnim: Animation
+    private lateinit var logoImage: ImageView
+    private lateinit var upperElementImage: ImageView
+    private lateinit var lowerElementImage: ImageView
 
     private val splashViewModel: Contract.ISplashViewModel by viewModel<SplashViewModel>()
 
@@ -28,6 +35,16 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSplashBinding.inflate(inflater, container, false)
+
+        logoImage = binding.imageLogo
+        upperElementImage = binding.imageUpperElement
+        lowerElementImage = binding.imageLowerElement
+        splashAnim = AnimationUtils.loadAnimation(requireContext(), R.anim.splash_anim)
+
+        logoImage.startAnimation(splashAnim)
+        upperElementImage.startAnimation(splashAnim)
+        lowerElementImage.startAnimation(splashAnim)
+
         return binding.root
     }
 
@@ -49,7 +66,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
     private fun observeIsUserCreated() {
         splashViewModel.isUserCreated.observe(viewLifecycleOwner) {
-            if(it == true) {
+            if (it == true) {
                 findNavController().navigate(R.id.action_splashFragment_to_mainActivity)
                 activity?.finish()
             } else {
