@@ -26,7 +26,7 @@
     <string name="PROFILE_STREET_HINT">Улица</string>
     <string name="PROFILE_BUILDING_NUMBER_HINT">Дом</string>
     <string name="PROFILE_FLOOR_NUMBER_HINT">Этаж</string>
-    <string name="PROFILE_APARTMENT_NUMBER_HINT">Квартира</string>
+    <string name="PROFILE_APARTMENT_NUMBER_HINT">Кв/офис</string>
     <string name="PROFILE_PAYMENT_METHOD_HEADER">Способ оплаты</string>
     <string name="SAVE_BUTTON_TEXT">Сохранить</string>
 
