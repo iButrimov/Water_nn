@@ -15,7 +15,6 @@ interface IRepository {
     }
 
     interface UserRepository {
-        suspend fun validationAuthDataList(authData: AuthData): List<AuthValidationStatus>
         suspend fun createNewUser(authData: AuthData)
         suspend fun checkUserCreated(): Boolean
         suspend fun getUserInfo(): UserInformation

@@ -2,8 +2,6 @@ package com.example.water_nn.data.repositories
 
 import com.example.water_nn.data.database.AppDatabase
 import com.example.water_nn.data.database.entity.Order
-import com.example.water_nn.domain.models.AuthData
-import com.example.water_nn.domain.models.AuthValidationStatus
 import com.example.water_nn.domain.models.OrderData
 import com.example.water_nn.domain.models.ValidationStatus
 import com.example.water_nn.domain.repositories.IRepository

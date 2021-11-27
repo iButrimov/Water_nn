@@ -9,24 +9,6 @@ import com.example.water_nn.presentation.extentions.getStringOrEmpty
 
 class UserRepository(private val sharedPref: SharedPreferences) : IRepository.UserRepository {
 
-    override suspend fun validationAuthDataList(authData: AuthData): List<AuthValidationStatus> {
-        val validationAuthStatusList = mutableListOf<AuthValidationStatus>()
-
-        if (authData.name.isBlank()) {
-            validationAuthStatusList.add(AuthValidationStatus.NAME_FIELD_IS_EMPTY)
-        }
-
-        if (authData.phoneNumber.isBlank()) {
-            validationAuthStatusList.add(AuthValidationStatus.PHONE_NUMBER_FIELD_IS_EMPTY)
-        }
-
-        if (validationAuthStatusList.isEmpty()) {
-            validationAuthStatusList.add(AuthValidationStatus.SUCCESS)
-        }
-
-        return validationAuthStatusList
-    }
-
     override suspend fun createNewUser(authData: AuthData) {
         sharedPref.edit().apply {
             putString(NAME_KEY, authData.name)

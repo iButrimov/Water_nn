@@ -32,7 +32,7 @@ private val domainModule = module {
     factory { GetAllOrdersUseCase(get()) }
     factory { DeleteOrderUseCase(get()) }
     factory { ValidateNewOrderDataUseCase(get()) }
-    factory { ValidateAuthDataUseCase(get()) }
+    factory { ValidateAuthDataUseCase() }
     factory { CreateNewUserUseCase(get()) }
     factory { CheckUserCreatedUseCase(get()) }
     factory { GetPriceFullBottleUseCase(get()) }
