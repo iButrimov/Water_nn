@@ -6,12 +6,11 @@ import kotlinx.coroutines.flow.Flow
 
 interface IRepository {
 
-    interface LocalRepository {
+    interface OrderRepository {
         suspend fun addOrder(order: Order)
         suspend fun deleteOrder(order: Order)
         suspend fun getOrderById(id: String): Order
         suspend fun getAllOrders(): Flow<List<Order>>
-        suspend fun isNewOrderDataValid(dataOrder: OrderData): List<ValidationStatus>
     }
 
     interface UserRepository {

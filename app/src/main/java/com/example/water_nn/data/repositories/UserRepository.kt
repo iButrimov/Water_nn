@@ -2,7 +2,6 @@ package com.example.water_nn.data.repositories
 
 import android.content.SharedPreferences
 import com.example.water_nn.domain.models.AuthData
-import com.example.water_nn.domain.models.AuthValidationStatus
 import com.example.water_nn.domain.models.UserInformation
 import com.example.water_nn.domain.repositories.IRepository
 import com.example.water_nn.presentation.extentions.getStringOrEmpty
@@ -54,12 +53,12 @@ class UserRepository(private val sharedPref: SharedPreferences) : IRepository.Us
     }
 
     companion object {
-        private const val NAME_KEY = "NAME_KEY"
-        private const val PHONE_NUMBER_KEY = "PHONE_NUMBER_KEY"
-        private const val ADDRESS_KEY = "ADDRESS_KEY"
-        private const val BUILDING_NUMBER_KEY = "BUILDING_NUMBER_KEY"
-        private const val FLOOR_NUMBER_KEY = "FLOOR_NUMBER_KEY"
-        private const val APARTMENT_NUMBER_KEY = "APARTMENT_NUMBER_KEY"
-        private const val USER_IS_CREATED = "USER_IS_CREATED"
+        const val NAME_KEY = "NAME_KEY"
+        const val PHONE_NUMBER_KEY = "PHONE_NUMBER_KEY"
+        const val ADDRESS_KEY = "ADDRESS_KEY"
+        const val BUILDING_NUMBER_KEY = "BUILDING_NUMBER_KEY"
+        const val FLOOR_NUMBER_KEY = "FLOOR_NUMBER_KEY"
+        const val APARTMENT_NUMBER_KEY = "APARTMENT_NUMBER_KEY"
+        const val USER_IS_CREATED = "USER_IS_CREATED"
     }
 }

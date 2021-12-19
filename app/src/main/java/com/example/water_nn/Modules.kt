@@ -19,7 +19,7 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 
 private val dataModule = module {
-    single { OrderRepository(get()) } bind IRepository.LocalRepository::class
+    single { OrderRepository(get()) } bind IRepository.OrderRepository::class
     single { UserRepository(get()) } bind IRepository.UserRepository::class
     single { PriceRepository() } bind IRepository.PriceRepository::class
     single { getOrdersDatabase(get()) }
@@ -31,7 +31,7 @@ private val domainModule = module {
     factory { GetOrderByIdUseCase(get()) }
     factory { GetAllOrdersUseCase(get()) }
     factory { DeleteOrderUseCase(get()) }
-    factory { ValidateNewOrderDataUseCase(get()) }
+    factory { ValidateNewOrderDataUseCase() }
     factory { ValidateAuthDataUseCase() }
     factory { CreateNewUserUseCase(get()) }
     factory { CheckUserCreatedUseCase(get()) }

@@ -1,10 +1,24 @@
 package com.example.water_nn.domain.usecases
 
-import android.content.Context
 import com.example.water_nn.domain.models.OrderData
 import com.example.water_nn.domain.models.ValidationStatus
-import com.example.water_nn.domain.repositories.IRepository
 
-class ValidateNewOrderDataUseCase(private val repository: IRepository.LocalRepository) {
-    suspend fun execute(dataOrder: OrderData): List<ValidationStatus> = repository.isNewOrderDataValid(dataOrder)
+class ValidateNewOrderDataUseCase {
+    fun execute(dataOrder: OrderData): List<ValidationStatus> {
+        val validationStatusList = mutableListOf<ValidationStatus>()
+
+        if (dataOrder.address.isBlank()) {
+            validationStatusList.add(ValidationStatus.ADDRESS_FIELD_IS_EMPTY)
+        }
+
+        if (dataOrder.phoneNumber.isBlank()) {
+            validationStatusList.add(ValidationStatus.PHONE_NUMBER_FIELD_IS_EMPTY)
+        }
+
+        if (validationStatusList.isEmpty()) {
+            validationStatusList.add(ValidationStatus.SUCCESS)
+        }
+
+        return validationStatusList
+    }
 }
