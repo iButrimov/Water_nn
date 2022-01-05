@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    compileSdk 30
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.example.water_nn"
@@ -85,6 +85,9 @@ dependencies {
 
     // recycler
     implementation "androidx.recyclerview:recyclerview:1.2.1"
+
+    //viewBinding delegate
+    implementation 'com.github.kirich1409:viewbindingpropertydelegate-noreflection:1.5.3'
 
     //adapterDelegates
     implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.0'

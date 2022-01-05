@@ -1,11 +1,10 @@
 package com.example.water_nn.presentation.main.profile
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.water_nn.R
 import com.example.water_nn.databinding.DeliveryInfoBinding
 import com.example.water_nn.databinding.FragmentProfileBinding
@@ -16,24 +15,12 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
-    private var _binding: FragmentProfileBinding? = null
-    private val binding get() = _binding!!
-    private lateinit var userInfoBinding: UserInfoBinding
-    private lateinit var deliveryInfoBinding: DeliveryInfoBinding
+    private val binding by viewBinding(FragmentProfileBinding::bind)
+    private val userInfoBinding by viewBinding(UserInfoBinding::bind)
+    private val deliveryInfoBinding by viewBinding(DeliveryInfoBinding::bind)
 
     private val profileViewModel: Contract.IProfileViewModel by viewModel<ProfileViewModel>()
     private lateinit var userInformation: UserInformation
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        userInfoBinding = UserInfoBinding.bind(binding.root)
-        deliveryInfoBinding = DeliveryInfoBinding.bind(binding.root)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -89,10 +76,5 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
             profileViewModel.saveUserInformation(userInformation)
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
