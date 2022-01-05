@@ -1,9 +1,7 @@
 package com.example.water_nn.presentation.splash
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
@@ -11,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.water_nn.R
 import com.example.water_nn.databinding.FragmentSplashBinding
 import com.example.water_nn.presentation.main.Contract
@@ -20,8 +19,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SplashFragment : Fragment(R.layout.fragment_splash) {
 
-    private var _binding: FragmentSplashBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding(FragmentSplashBinding::bind)
+
     private lateinit var splashAnim: Animation
     private lateinit var logoImage: ImageView
     private lateinit var upperElementImage: ImageView
@@ -29,30 +28,22 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
     private val splashViewModel: Contract.ISplashViewModel by viewModel<SplashViewModel>()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentSplashBinding.inflate(inflater, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        logoImage = binding.imageLogo
-        upperElementImage = binding.imageUpperElement
-        lowerElementImage = binding.imageLowerElement
+        with(binding) {
+            logoImage = imageLogo
+            upperElementImage = imageUpperElement
+            lowerElementImage = imageLowerElement
+        }
+
         splashAnim = AnimationUtils.loadAnimation(requireContext(), R.anim.splash_anim)
 
         logoImage.startAnimation(splashAnim)
         upperElementImage.startAnimation(splashAnim)
         lowerElementImage.startAnimation(splashAnim)
 
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
         lifecycleScope.launch {
-
             splashViewModel.checkUserCreated()
 
             delay(1000)
@@ -74,10 +65,5 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
                 activity?.finish()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

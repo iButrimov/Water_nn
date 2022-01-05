@@ -1,11 +1,10 @@
 package com.example.water_nn.presentation.authorisation
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.water_nn.R
 import com.example.water_nn.databinding.FragmentAuthBinding
 import com.example.water_nn.databinding.UserInfoBinding
@@ -16,22 +15,11 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AuthFragment : Fragment(R.layout.fragment_auth) {
 
-    private var _binding: FragmentAuthBinding? = null
-    private val binding get() = _binding!!
-    private lateinit var userInfoBinding: UserInfoBinding
+    private val binding by viewBinding(FragmentAuthBinding::bind)
+    private val userInfoBinding by viewBinding(UserInfoBinding::bind)
 
     private val authViewModel: Contract.IAuthViewModel by viewModel<AuthViewModel>()
     private lateinit var authData: AuthData
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentAuthBinding.inflate(inflater, container, false)
-        userInfoBinding = UserInfoBinding.bind(binding.root)
-        return binding.root
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -64,10 +52,5 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
                 requireActivity().finish()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

@@ -2,11 +2,10 @@ package com.example.water_nn.presentation.main.history
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.water_nn.R
 import com.example.water_nn.databinding.FragmentNewOrderBinding
 import com.example.water_nn.domain.models.DeliveryDay
@@ -16,10 +15,9 @@ import com.example.water_nn.domain.models.ValidationStatus
 import com.example.water_nn.presentation.main.Contract
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class NewOrderFragment : Fragment() {
+class NewOrderFragment : Fragment(R.layout.fragment_new_order) {
 
-    private var _binding: FragmentNewOrderBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding(FragmentNewOrderBinding::bind)
 
     private val newOrderViewModel: Contract.INewOrderViewModel by viewModel<NewOrderViewModel>()
     private lateinit var orderData: OrderData
@@ -38,15 +36,6 @@ class NewOrderFragment : Fragment() {
             onDeliveryTimeClicked = { newOrderViewModel.deliveryTimeClicked(it) },
             onCommentChangedListener = { newOrderViewModel.commentChanged(it) }
         )
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentNewOrderBinding.inflate(inflater, container, false)
-        return binding.root
     }
 
     override fun onAttach(context: Context) {
@@ -115,11 +104,5 @@ class NewOrderFragment : Fragment() {
             adapter.items = it
             adapter.notifyDataSetChanged()
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding.orderRecyclerView.adapter = null
-        _binding = null
     }
 }
