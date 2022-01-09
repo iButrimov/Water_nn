@@ -12,42 +12,38 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/addressDeliveryField"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:hint="@string/PROFILE_STREET_HINT"
+            android:layout_height="56dp"
             android:textColorHint="#959494"
             app:boxBackgroundColor="@color/white"
-            app:boxCornerRadiusBottomEnd="30dp"
-            app:boxCornerRadiusBottomStart="30dp"
-            app:boxCornerRadiusTopEnd="30dp"
-            app:boxCornerRadiusTopStart="30dp"
+            app:boxCornerRadiusBottomEnd="28dp"
+            app:boxCornerRadiusBottomStart="28dp"
+            app:boxCornerRadiusTopEnd="28dp"
+            app:boxCornerRadiusTopStart="28dp"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp"
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                style="@style/EditTextViewPrimary"
+                android:hint="@string/PROFILE_STREET_HINT" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="@dimen/headers_vertical_margin">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/buildingNumber"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_height="56dp"
                 android:layout_marginEnd="5dp"
                 android:textColorHint="#959494"
                 app:boxBackgroundColor="@color/white"
-                app:boxCornerRadiusBottomEnd="30dp"
-                app:boxCornerRadiusBottomStart="30dp"
-                app:boxCornerRadiusTopEnd="30dp"
-                app:boxCornerRadiusTopStart="30dp"
+                app:boxCornerRadiusBottomEnd="28dp"
+                app:boxCornerRadiusBottomStart="28dp"
+                app:boxCornerRadiusTopEnd="28dp"
+                app:boxCornerRadiusTopStart="28dp"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
                 app:errorEnabled="true"
@@ -57,26 +53,22 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:gravity="center"
-                    android:hint="@string/PROFILE_BUILDING_NUMBER_HINT"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    style="@style/EditTextViewPrimary"
+                    android:hint="@string/PROFILE_BUILDING_NUMBER_HINT" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/floorNumber"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_height="56dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:textColorHint="#959494"
                 app:boxBackgroundColor="@color/white"
-                app:boxCornerRadiusBottomEnd="30dp"
-                app:boxCornerRadiusBottomStart="30dp"
-                app:boxCornerRadiusTopEnd="30dp"
-                app:boxCornerRadiusTopStart="30dp"
+                app:boxCornerRadiusBottomEnd="28dp"
+                app:boxCornerRadiusBottomStart="28dp"
+                app:boxCornerRadiusTopEnd="28dp"
+                app:boxCornerRadiusTopStart="28dp"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
                 app:errorEnabled="true"
@@ -86,25 +78,21 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:gravity="center"
-                    android:hint="@string/PROFILE_FLOOR_NUMBER_HINT"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    style="@style/EditTextViewPrimary"
+                    android:hint="@string/PROFILE_FLOOR_NUMBER_HINT" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/apartmentNumber"
                 android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_height="56dp"
                 android:layout_marginStart="5dp"
                 android:textColorHint="#959494"
                 app:boxBackgroundColor="@color/white"
-                app:boxCornerRadiusBottomEnd="30dp"
-                app:boxCornerRadiusBottomStart="30dp"
-                app:boxCornerRadiusTopEnd="30dp"
-                app:boxCornerRadiusTopStart="30dp"
+                app:boxCornerRadiusBottomEnd="28dp"
+                app:boxCornerRadiusBottomStart="28dp"
+                app:boxCornerRadiusTopEnd="28dp"
+                app:boxCornerRadiusTopStart="28dp"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="0dp"
                 app:errorEnabled="true"
@@ -114,16 +102,10 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:gravity="center"
-                    android:hint="@string/PROFILE_APARTMENT_NUMBER_HINT"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    style="@style/EditTextViewPrimary"
+                    android:hint="@string/PROFILE_APARTMENT_NUMBER_HINT" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.appcompat.widget.LinearLayoutCompat>
-
 </merge>

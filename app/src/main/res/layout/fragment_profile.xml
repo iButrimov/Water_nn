@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary_color"
+        android:background="@color/color_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -45,56 +45,33 @@
 
             <TextView
                 android:id="@+id/user_info_header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginVertical="20dp"
-                android:text="@string/PROFILE_USER_INFO_HEADER"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                style="@style/ProfileHeadersText"
+                android:layout_marginVertical="@dimen/headers_vertical_margin"
+                android:text="@string/PROFILE_USER_INFO_HEADER" />
 
             <include layout="@layout/user_info" />
 
             <TextView
                 android:id="@+id/address_delivery_header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginVertical="20dp"
-                android:text="@string/PROFILE_ADDRESS_DELIVERY_HEADER"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                style="@style/ProfileHeadersText"
+                android:layout_marginVertical="@dimen/headers_vertical_margin"
+                android:text="@string/PROFILE_ADDRESS_DELIVERY_HEADER" />
 
             <include layout="@layout/delivery_info" />
 
             <TextView
                 android:id="@+id/payment_method_header"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:text="@string/PROFILE_PAYMENT_METHOD_HEADER"
-                android:textColor="#000000"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                style="@style/ProfileHeadersText"
+                android:layout_marginVertical="@dimen/headers_vertical_margin"
+                android:text="@string/PROFILE_PAYMENT_METHOD_HEADER" />
 
             <Button
                 android:id="@+id/save_btn"
-                android:layout_width="320dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="25dp"
+                style="@style/Button.Contained"
+                android:layout_marginBottom="18dp"
                 android:background="@drawable/registration_button"
                 android:enabled="false"
-                android:text="@string/SAVE_BUTTON_TEXT"
-                android:textAllCaps="false"
-                android:textSize="22sp" />
-
+                android:text="@string/SAVE_BUTTON_TEXT" />
         </androidx.appcompat.widget.LinearLayoutCompat>
-
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

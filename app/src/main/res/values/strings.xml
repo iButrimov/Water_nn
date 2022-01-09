@@ -10,7 +10,7 @@
 
     <string name="AUTH_SCREEN">Экран авторизации</string>
     <string name="AUTH_GREETING_TEXT">Привет!</string>
-    <string name="AUTH_REGISTRATION_BUTTON_TEXT">Зарегистрироваться</string>
+    <string name="AUTH_REGISTRATION_BUTTON_TEXT">Войти</string>
     <string name="NAME_FIELD_SHOULD_BE_FILLED_TEXT">Поле с именем должно быть заполнено</string>
     <string name="PHONE_FIELD_SHOULD_BE_FILLED_TEXT">Поле с телефоном должно быть заполнено</string>
 
@@ -34,5 +34,5 @@
 
     <string name="GRATITUDE_UPPER_TEXT">Спасибо!</string>
     <string name="GRATITUDE_LOWER_TEXT">Ваш заказ успешно создан!</string>
-    <string name="GRATITUDE_CONTINUE_BUTTON_TEXT">Продолжить</string>
+    <string name="GRATITUDE_CONTINUE_BUTTON_TEXT">До встречи!</string>
 </resources>

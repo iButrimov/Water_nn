@@ -29,6 +29,7 @@ class NewOrderViewModel(
     override var name: String = ""
     override var address: String = ""
     override var phoneNumber: String = ""
+    override var comment: String = ""
 
     override var priceFullBottle: Double = 0.0
         set(value) {
@@ -66,8 +67,6 @@ class NewOrderViewModel(
             field = value
             buildNewOrderItems()
         }
-
-    override var comment: String = ""
 
     override fun createOrder(orderData: OrderData) {
         validationStatusList.value = emptyList()
@@ -111,6 +110,7 @@ class NewOrderViewModel(
             name = order.name ?: ""
             address = order.address
             phoneNumber = order.phoneNumber
+            comment = order.comment
             qtyFullBottle = order.quantityWater
             qtyEmptyBottle = order.quantityEmptyBottle
             deliveryDay = order.deliveryDay

@@ -38,26 +38,20 @@
                 android:id="@+id/greeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="25dp"
                 android:text="@string/AUTH_GREETING_TEXT"
                 android:textColor="#838080"
-                android:textSize="30sp"
+                android:layout_marginBottom="@dimen/headers_vertical_margin"
+                android:textSize="28sp"
                 android:textStyle="bold" />
 
             <include layout="@layout/user_info" />
 
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/register_btn"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="25dp"
+                style="@style/Button.Contained"
+                android:layout_marginTop="18dp"
                 android:background="@drawable/registration_button"
-                android:backgroundTint="@color/primary_color"
                 android:text="@string/AUTH_REGISTRATION_BUTTON_TEXT"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
