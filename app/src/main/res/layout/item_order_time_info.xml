@@ -3,108 +3,89 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="12dp"
-    android:layout_marginVertical="8dp"
-    app:cardCornerRadius="10dp">
+    android:backgroundTint="@android:color/transparent"
+    app:cardElevation="0dp">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingHorizontal="20dp">
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipToday"
+            style="@style/CustomChipChoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:checked="true"
+            android:text="@string/today"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@id/chipTomorrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chipToday"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:checked="true"
-                android:text="Сегодня"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toStartOf="@id/chipTomorrow"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipTomorrow"
+            style="@style/CustomChipChoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:checked="false"
+            android:text="@string/tomorrow"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/chipToday"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chipTomorrow"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:checked="false"
-                android:text="Завтра"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/chipToday"
-                app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/morning"
+            style="@style/CustomChipChoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="@string/morning_9_12"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@id/noon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chipToday" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/noon"
+            style="@style/CustomChipChoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/noon_12_15"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@id/afternoon"
+            app:layout_constraintStart_toEndOf="@id/morning"
+            app:layout_constraintTop_toBottomOf="@id/chipToday" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <com.google.android.material.chip.Chip
+            android:id="@+id/afternoon"
+            style="@style/CustomChipChoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/afternoon_15_18"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toStartOf="@id/evening"
+            app:layout_constraintStart_toEndOf="@id/noon"
+            app:layout_constraintTop_toBottomOf="@id/chipTomorrow" />
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/morning"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:text="9-12"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/noon"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/evening"
+            style="@style/CustomChipChoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/evening_18_21"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/afternoon"
+            app:layout_constraintTop_toBottomOf="@id/chipTomorrow" />
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/noon"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:text="12-15"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/afternoon"
-                app:layout_constraintStart_toEndOf="@id/morning"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/afternoon"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:text="15-18"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/evening"
-                app:layout_constraintStart_toEndOf="@id/noon"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/evening"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:text="18-21"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/afternoon"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

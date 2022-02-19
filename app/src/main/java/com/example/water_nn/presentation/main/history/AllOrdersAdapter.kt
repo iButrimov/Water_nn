@@ -25,7 +25,11 @@ private fun completedOrderAdapterDelegate(orderOnClickedListener: (Int) -> Unit)
                         DeliveryDay.TODAY -> "Сегодня"      //убрать
                         DeliveryDay.TOMORROW -> "Завтра"    //убрать
                     }
-                orderAddress.text = item.order.address
+                orderAddress.text =
+                            "ул. ${item.order.street}, " +
+                            "д.${item.order.building}, " +
+                            "кв.${item.order.apartment}, " +
+                            "эт.${item.order.floor}"
                 orderPhone.text = item.order.phoneNumber
                 orderBottleQuantity.text = "${item.order.quantityWater} поз."
                 price.text = "${item.order.totalPrice} ₽"

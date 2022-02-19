@@ -9,6 +9,10 @@ object NewOrderUtils {
         name: String?,
         address: String?,
         phoneNumber: String?,
+        street: String?,
+        building: String?,
+        floor: String?,
+        apartment: String?,
         priceFull: Double,
         priceEmpty: Double,
         qtyFull: Int,
@@ -19,6 +23,7 @@ object NewOrderUtils {
     ): List<ItemOrderCard> {
         return mutableListOf<ItemOrderCard>().apply {
             add(buildOrderUserInfo(name, address, phoneNumber))
+            add(buildAddressInfo(street, building, floor, apartment))
             add(buildOrderWaterInfo(priceFull, priceEmpty, qtyFull, qtyEmpty))
             add(buildDeliveryInfo(deliveryDay, deliveryTimes))
             add(buildCommentInfo(comment))
@@ -32,8 +37,21 @@ object NewOrderUtils {
     ): ItemOrderCard.OrderUserInfo {
         return ItemOrderCard.OrderUserInfo(
             name = name ?: "",
-            address = address ?: "",
             phone = phoneNumber ?: ""
+        )
+    }
+
+    private fun buildAddressInfo(
+        street: String?,
+        building: String?,
+        floor: String?,
+        apartment: String?
+    ): ItemOrderCard.OrderAddressInfo {
+        return ItemOrderCard.OrderAddressInfo(
+            street = street ?: "",
+            building = building ?: "",
+            floor = floor ?: "",
+            apartment = apartment ?: "",
         )
     }
 

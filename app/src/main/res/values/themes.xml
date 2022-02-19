@@ -2,13 +2,13 @@
     <!-- Base application theme. -->
     <style name="Theme.Water_nn" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/primary_color</item>
-        <item name="colorPrimaryVariant">@color/primary_dark_color</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="colorOnPrimary">@color/color_primary_text</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorSecondaryVariant">@color/color_secondary_variant</item>
+        <item name="colorOnSecondary">@color/color_secondary_text</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
@@ -16,5 +16,42 @@
     
     <style name="Theme.Water_nn.Splash">
         <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Button.Contained" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="cornerRadius">28dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="ProfileHeadersText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAppearance">@style/Text.Primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="EditTextViewPrimary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">@style/Text.Primary</item>
+    </style>
+
+    <style name="Text" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Text.Primary">
+        <item name="android:textColor">@color/color_secondary_text</item>
+    </style>
+
+    <style name="CustomChipChoice" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/bg_chip_state_list</item>
+        <item name="android:textColor">@color/text_color_chip_state_list</item>
     </style>
 </resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bottled_water">Бутилированная вода</string>
+    <string name="bottle_18_9L">Бутыль 18,9 л</string>
+    <string name="minus_button">-</string>
+    <string name="plus_button">+</string>
+    <string name="return_bottle">Возврат тары</string>
+    <string name="today">Сегодня</string>
+    <string name="tomorrow">Завтра</string>
+    <string name="morning_9_12">9-12</string>
+    <string name="noon_12_15">15-18</string>
+    <string name="afternoon_15_18">15-18</string>
+    <string name="evening_18_21">18-21</string>
+</resources>

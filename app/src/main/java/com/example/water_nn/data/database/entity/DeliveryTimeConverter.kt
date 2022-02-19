@@ -14,7 +14,9 @@ class DeliveryTimeConverters {
         @TypeConverter
         @JvmStatic
         fun toDeliveryTime(data: String?): List<DeliveryTime> {
-            return data?.split(",")?.mapNotNull { safeValueOf<DeliveryTime>(it) } ?: emptyList()
+            return data?.split(",")?.mapNotNull {
+                safeValueOf<DeliveryTime>(it)
+            } ?: emptyList()
         }
     }
 }

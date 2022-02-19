@@ -26,7 +26,10 @@ class NewOrderFragment : Fragment(R.layout.fragment_new_order) {
     private val adapter by lazy {
         orderAdapterDelegates(
             onNameChangedListener = { newOrderViewModel.nameChanged(it) },
-            onAddressChangedListener = { newOrderViewModel.addressChanged(it) },
+            onStreetChangedListener = { newOrderViewModel.streetChanged(it) },
+            onBuildingChangedListener = { newOrderViewModel.buildingChanged(it) },
+            onFloorChangedListener = { newOrderViewModel.floorChanged(it) },
+            onApartmentChangedListener = { newOrderViewModel.apartmentChanged(it) },
             onPhoneChangedListener = { newOrderViewModel.phoneChanged(it) },
             minusFullBottleClickListener = { newOrderViewModel.minusQtyFullBottle() },
             plusFullBottleClickListener = { newOrderViewModel.plusQtyFullBottle() },
@@ -60,6 +63,10 @@ class NewOrderFragment : Fragment(R.layout.fragment_new_order) {
                 name = newOrderViewModel.name,
                 address = newOrderViewModel.address,
                 phoneNumber = newOrderViewModel.phoneNumber,
+                street = newOrderViewModel.street,
+                building = newOrderViewModel.building,
+                floor = newOrderViewModel.floor,
+                apartment = newOrderViewModel.apartment,
                 quantityFullBottle = newOrderViewModel.qtyFullBottle,
                 quantityEmptyBottle = newOrderViewModel.qtyEmptyBottle,
                 deliveryDay = newOrderViewModel.deliveryDay,
@@ -74,7 +81,10 @@ class NewOrderFragment : Fragment(R.layout.fragment_new_order) {
         binding.fillUserInfoButton.setOnClickListener {
             newOrderViewModel.apply {
                 name = "Иван"
-                address = "ул. Невзоровых 87, кв. 60"
+                street = "Невзоровых"
+                building = "87"
+                floor = "6"
+                apartment = "60"
                 phoneNumber = "+79200135483"
                 qtyFullBottle = 3
                 qtyEmptyBottle = 3

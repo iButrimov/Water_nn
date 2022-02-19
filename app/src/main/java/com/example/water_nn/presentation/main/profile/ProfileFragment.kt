@@ -30,10 +30,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         profileViewModel.userInfoLiveData.observe(viewLifecycleOwner) {
             userInfoBinding.nameField.editText?.setText(it.name)
             userInfoBinding.phoneNumberField.editText?.setText(it.phoneNumber)
-            deliveryInfoBinding.addressDeliveryField.editText?.setText(it.address)
-            deliveryInfoBinding.buildingNumber.editText?.setText(it.buildingNumber)
-            deliveryInfoBinding.floorNumber.editText?.setText(it.floorNumber)
-            deliveryInfoBinding.apartmentNumber.editText?.setText(it.apartmentNumber)
+            deliveryInfoBinding.streetField.editText?.setText(it.address)
+            deliveryInfoBinding.buildingNumberField.editText?.setText(it.buildingNumber)
+            deliveryInfoBinding.floorNumberField.editText?.setText(it.floorNumber)
+            deliveryInfoBinding.apartmentNumberField.editText?.setText(it.apartmentNumber)
         }
 
         profileViewModel.btnIsActive.observe(viewLifecycleOwner) {
@@ -48,19 +48,19 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             profileViewModel.phoneNumber = it.toString()
         }
 
-        deliveryInfoBinding.addressDeliveryField.editText?.doAfterTextChanged {
+        deliveryInfoBinding.streetField.editText?.doAfterTextChanged {
             profileViewModel.address = it.toString()
         }
 
-        deliveryInfoBinding.buildingNumber.editText?.doAfterTextChanged {
+        deliveryInfoBinding.buildingNumberField.editText?.doAfterTextChanged {
             profileViewModel.buildingNumber = it.toString()
         }
 
-        deliveryInfoBinding.floorNumber.editText?.doAfterTextChanged {
+        deliveryInfoBinding.floorNumberField.editText?.doAfterTextChanged {
             profileViewModel.floorNumber = it.toString()
         }
 
-        deliveryInfoBinding.apartmentNumber.editText?.doAfterTextChanged {
+        deliveryInfoBinding.apartmentNumberField.editText?.doAfterTextChanged {
             profileViewModel.apartmentNumber = it.toString()
         }
 
@@ -68,10 +68,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             userInformation = UserInformation(
                 name = userInfoBinding.nameField.editText?.text.toString(),
                 phoneNumber = userInfoBinding.phoneNumberField.editText?.text.toString(),
-                address = deliveryInfoBinding.addressDeliveryField.editText?.text.toString(),
-                buildingNumber = deliveryInfoBinding.buildingNumber.editText?.text.toString(),
-                floorNumber = deliveryInfoBinding.floorNumber.editText?.text.toString(),
-                apartmentNumber = deliveryInfoBinding.apartmentNumber.editText?.text.toString()
+                address = deliveryInfoBinding.streetField.editText?.text.toString(),
+                buildingNumber = deliveryInfoBinding.buildingNumberField.editText?.text.toString(),
+                floorNumber = deliveryInfoBinding.floorNumberField.editText?.text.toString(),
+                apartmentNumber = deliveryInfoBinding.apartmentNumberField.editText?.text.toString()
             )
 
             profileViewModel.saveUserInformation(userInformation)

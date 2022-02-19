@@ -10,7 +10,7 @@
 
     <string name="AUTH_SCREEN">Экран авторизации</string>
     <string name="AUTH_GREETING_TEXT">Привет!</string>
-    <string name="AUTH_REGISTRATION_BUTTON_TEXT">Зарегистрироваться</string>
+    <string name="AUTH_REGISTRATION_BUTTON_TEXT">Войти</string>
     <string name="NAME_FIELD_SHOULD_BE_FILLED_TEXT">Поле с именем должно быть заполнено</string>
     <string name="PHONE_FIELD_SHOULD_BE_FILLED_TEXT">Поле с телефоном должно быть заполнено</string>
 
@@ -34,5 +34,19 @@
 
     <string name="GRATITUDE_UPPER_TEXT">Спасибо!</string>
     <string name="GRATITUDE_LOWER_TEXT">Ваш заказ успешно создан!</string>
-    <string name="GRATITUDE_CONTINUE_BUTTON_TEXT">Продолжить</string>
+    <string name="GRATITUDE_CONTINUE_BUTTON_TEXT">До встречи!</string>
+    <string name="bottled_water">Бутилированная вода</string>
+    <string name="bottle_18_9L">Бутыль 18,9 л</string>
+    <string name="minus_button">-</string>
+    <string name="plus_button">+</string>
+    <string name="return_bottle">Возврат тары</string>
+
+    <string name="HISTORY_ORDER">Заказ из истории</string>
+    <string name="MOVE_TO_ORDER">Перейти к заказу</string>
+    <string name="today">Сегодня</string>
+    <string name="tomorrow">Завтра</string>
+    <string name="morning_9_12">9-12</string>
+    <string name="noon_12_15">12-15</string>
+    <string name="afternoon_15_18">15-18</string>
+    <string name="evening_18_21">18-21</string>
 </resources>
