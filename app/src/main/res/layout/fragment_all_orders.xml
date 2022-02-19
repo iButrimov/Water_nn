@@ -73,6 +73,7 @@
         android:contentDescription="@string/CREATE_NEW_ORDER"
         android:focusable="true"
         android:src="@android:drawable/ic_input_add"
+        app:tint="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

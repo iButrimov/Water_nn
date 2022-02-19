@@ -29,6 +29,10 @@ class NewOrderViewModel(
     override var name: String = ""
     override var address: String = ""
     override var phoneNumber: String = ""
+    override var street: String = ""
+    override var building: String = ""
+    override var floor: String = ""
+    override var apartment: String = ""
     override var comment: String = ""
 
     override var priceFullBottle: Double = 0.0
@@ -81,6 +85,10 @@ class NewOrderViewModel(
                         id = 0,
                         name = name,
                         address = address,
+                        street = street,
+                        building = building,
+                        floor = floor,
+                        apartment = apartment,
                         phoneNumber = phoneNumber,
                         quantityWater = quantityFullBottle,
                         quantityEmptyBottle = quantityEmptyBottle,
@@ -110,6 +118,10 @@ class NewOrderViewModel(
             name = order.name ?: ""
             address = order.address
             phoneNumber = order.phoneNumber
+            street = order.street
+            building = order.building
+            floor = order.floor
+            apartment = order.apartment
             comment = order.comment
             qtyFullBottle = order.quantityWater
             qtyEmptyBottle = order.quantityEmptyBottle
@@ -128,6 +140,22 @@ class NewOrderViewModel(
 
     override fun phoneChanged(changedPhone: String) {
         phoneNumber = changedPhone
+    }
+
+    override fun streetChanged(changedStreet: String) {
+        street = changedStreet
+    }
+
+    override fun buildingChanged(changedBuilding: String) {
+        building = changedBuilding
+    }
+
+    override fun floorChanged(changedFloor: String) {
+        floor = changedFloor
+    }
+
+    override fun apartmentChanged(changedApartment: String) {
+        apartment = changedApartment
     }
 
     override fun qtyFullBottleChange(qty: Int) {
@@ -209,6 +237,10 @@ class NewOrderViewModel(
             name,
             address,
             phoneNumber,
+            street,
+            building,
+            floor,
+            apartment,
             priceFullBottle,
             priceEmptyBottle,
             qtyFullBottle,

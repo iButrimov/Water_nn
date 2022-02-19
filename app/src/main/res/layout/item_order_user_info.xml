@@ -2,51 +2,59 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
-    android:layout_marginHorizontal="12dp"
+    android:layout_height="wrap_content"
     android:layout_marginVertical="8dp"
+    app:cardElevation="0dp"
+    android:backgroundTint="@android:color/transparent"
     app:cardCornerRadius="10dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/user_info_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:paddingHorizontal="20dp">
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/nameField"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="@string/PROFILE_NAME_HINT"
-            android:maxLines="1"
-            android:textSize="16sp"
-            app:errorEnabled="true" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/addressField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="@string/PROFILE_ADDRESS_DELIVERY_HEADER"
-            android:maxLines="1"
-            android:textSize="16sp"
+            android:layout_height="56dp"
+            android:textColorHint="#959494"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="28dp"
+            app:boxCornerRadiusBottomStart="28dp"
+            app:boxCornerRadiusTopEnd="28dp"
+            app:boxCornerRadiusTopStart="28dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
             app:errorEnabled="true">
 
-        </com.google.android.material.textfield.TextInputEditText>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                style="@style/EditTextViewPrimary"
+                android:hint="@string/PROFILE_NAME_HINT" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/phoneNumberField"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="@string/PROFILE_PHONE_NUMBER_HINT"
-            android:maxLines="1"
-            android:textSize="16sp"
+            android:layout_height="56dp"
+            android:layout_marginTop="@dimen/headers_vertical_margin"
+            android:textColorHint="#959494"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusBottomEnd="28dp"
+            app:boxCornerRadiusBottomStart="28dp"
+            app:boxCornerRadiusTopEnd="28dp"
+            app:boxCornerRadiusTopStart="28dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
             app:errorEnabled="true">
 
-        </com.google.android.material.textfield.TextInputEditText>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneNumber"
+                style="@style/EditTextViewPrimary"
+                android:hint="@string/PROFILE_PHONE_NUMBER_HINT" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

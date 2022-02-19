@@ -1,6 +1,5 @@
 package com.example.water_nn.presentation.main
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.water_nn.data.database.entity.Order
@@ -17,7 +16,7 @@ interface Contract {
     interface IAuthViewModel {
         val validationAuthStatusList: LiveData<List<AuthValidationStatus>>
         fun createUser(authData: AuthData)
-        suspend fun isAuthDataValid (authData: AuthData): Boolean
+        suspend fun isAuthDataValid(authData: AuthData): Boolean
     }
 
     interface IAllOrdersViewModel {
@@ -32,6 +31,10 @@ interface Contract {
         var name: String
         var address: String
         var phoneNumber: String
+        var street: String
+        var building: String
+        var floor: String
+        var apartment: String
         var qtyFullBottle: Int
         var qtyEmptyBottle: Int
         var deliveryDay: DeliveryDay
@@ -41,12 +44,17 @@ interface Contract {
         fun createOrder(orderData: OrderData)
         fun getEmptyOrder()
         fun getOrderById(id: String)
-        suspend fun isOrderDataValid (orderData: OrderData): Boolean
-//        val selectedOrder: MutableLiveData<Order>
+        suspend fun isOrderDataValid(orderData: OrderData): Boolean
+
+        //        val selectedOrder: MutableLiveData<Order>
         val newOrderItems: MutableLiveData<List<ItemOrderCard>>
         fun nameChanged(changedName: String)
         fun addressChanged(changedAddress: String)
         fun phoneChanged(changedPhone: String)
+        fun streetChanged(changedStreet: String)
+        fun buildingChanged(changedBuilding: String)
+        fun floorChanged(changedFloor: String)
+        fun apartmentChanged(changedApartment: String)
         fun qtyFullBottleChange(qty: Int)
         fun qtyEmptyBottleChange(qty: Int)
         fun plusQtyFullBottle()

@@ -1,10 +1,7 @@
 package com.example.water_nn.presentation.main.history
 
 import androidx.core.widget.doAfterTextChanged
-import com.example.water_nn.databinding.ItemOrderCommentInfoBinding
-import com.example.water_nn.databinding.ItemOrderTimeInfoBinding
-import com.example.water_nn.databinding.ItemOrderUserInfoBinding
-import com.example.water_nn.databinding.ItemOrderWaterInfoBinding
+import com.example.water_nn.databinding.*
 import com.example.water_nn.domain.models.DeliveryDay
 import com.example.water_nn.domain.models.DeliveryTime
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
@@ -12,8 +9,7 @@ import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
 private fun orderUserInfoAdapterDelegate(
     onNameChangedListener: (String) -> Unit,
-    onAddressChangedListener: (String) -> Unit,
-    onPhoneChangedListener: (String) -> Unit
+    onPhoneChangedListener: (String) -> Unit,
 ) =
     adapterDelegateViewBinding<ItemOrderCard.OrderUserInfo, ItemOrderCard?, ItemOrderUserInfoBinding>(
         { layoutInflater, root ->
@@ -23,21 +19,54 @@ private fun orderUserInfoAdapterDelegate(
                 false
             )
         }) {
-        binding.nameField.doAfterTextChanged {
+        binding.name.doAfterTextChanged {
             onNameChangedListener(it.toString())
         }
-        binding.addressField.doAfterTextChanged {
-            onAddressChangedListener(it.toString())
-        }
-        binding.phoneNumberField.doAfterTextChanged {
+        binding.phoneNumber.doAfterTextChanged {
             onPhoneChangedListener(it.toString())
         }
 
         bind {
             binding.apply {
-                nameField.setText(item.name)
-                addressField.setText(item.address)
-                phoneNumberField.setText(item.phone)
+                name.setText(item.name)
+                phoneNumber.setText(item.phone)
+            }
+        }
+    }
+
+private fun orderAddressInfoAdapterDelegate(
+    onStreetChangedListener: (String) -> Unit,
+    onBuildingChangedListener: (String) -> Unit,
+    onFloorChangedListener: (String) -> Unit,
+    onApartmentChangedListener: (String) -> Unit
+) =
+    adapterDelegateViewBinding<ItemOrderCard.OrderAddressInfo, ItemOrderCard?, ItemOrderAddressInfoBinding>(
+        { layoutInflater, root ->
+            ItemOrderAddressInfoBinding.inflate(
+                layoutInflater,
+                root,
+                false
+            )
+        }) {
+        binding.street.doAfterTextChanged {
+            onStreetChangedListener(it.toString())
+        }
+        binding.buildingNumber.doAfterTextChanged {
+            onBuildingChangedListener(it.toString())
+        }
+        binding.floorNumber.doAfterTextChanged {
+            onFloorChangedListener(it.toString())
+        }
+        binding.apartmentNumber.doAfterTextChanged {
+            onApartmentChangedListener(it.toString())
+        }
+
+        bind {
+            binding.apply {
+                street.setText(item.street)
+                buildingNumber.setText(item.building)
+                floorNumber.setText(item.floor)
+                apartmentNumber.setText(item.apartment)
             }
         }
     }
@@ -162,8 +191,11 @@ private fun orderCommentInfoAdapterDelegate(
 
 fun orderAdapterDelegates(
     onNameChangedListener: (String) -> Unit,
-    onAddressChangedListener: (String) -> Unit,
     onPhoneChangedListener: (String) -> Unit,
+    onStreetChangedListener: (String) -> Unit,
+    onBuildingChangedListener: (String) -> Unit,
+    onFloorChangedListener: (String) -> Unit,
+    onApartmentChangedListener: (String) -> Unit,
     minusFullBottleClickListener: () -> Unit,
     plusFullBottleClickListener: () -> Unit,
     minusEmptyBottleClickListener: () -> Unit,
@@ -174,8 +206,13 @@ fun orderAdapterDelegates(
 ) = ListDelegationAdapter(
     orderUserInfoAdapterDelegate(
         onNameChangedListener,
-        onAddressChangedListener,
         onPhoneChangedListener
+    ),
+    orderAddressInfoAdapterDelegate(
+        onStreetChangedListener,
+        onBuildingChangedListener,
+        onFloorChangedListener,
+        onApartmentChangedListener
     ),
     orderTimeInfoAdapterDelegate(
         onDeliveryDayClicked,

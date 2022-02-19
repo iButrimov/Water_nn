@@ -24,6 +24,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
                 style="@style/EditTextViewPrimary"
                 android:hint="@string/PROFILE_NAME_HINT" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -44,6 +45,7 @@
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneNumber"
                 style="@style/EditTextViewPrimary"
                 android:hint="@string/PROFILE_PHONE_NUMBER_HINT" />
         </com.google.android.material.textfield.TextInputLayout>
