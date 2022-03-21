@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Water_nn" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.Water_nn" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/color_primary_variant</item>
@@ -10,10 +10,16 @@
         <item name="colorSecondaryVariant">@color/color_secondary_variant</item>
         <item name="colorOnSecondary">@color/color_secondary_text</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <!--        <item name="android:windowTranslucentStatus">true</item>-->
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <!-- Drawer style. -->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
     </style>
-    
+
     <style name="Theme.Water_nn.Splash">
         <item name="android:windowFullscreen">true</item>
     </style>
@@ -53,5 +59,48 @@
     <style name="CustomChipChoice" parent="@style/Widget.MaterialComponents.Chip.Choice">
         <item name="chipBackgroundColor">@color/bg_chip_state_list</item>
         <item name="android:textColor">@color/text_color_chip_state_list</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/black</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background" tools:ignore="PrivateResource">?attr/controlBackground
+        </item>
+    </style>
+
+    <style name="DialogHeaderStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="BodyMaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogBodyTextStyle">@style/BodyMaterialAlertDialogText</item>
+        <item name="materialButtonStyle">@style/ButtonsMaterialAlertDialog</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:backgroundDimAmount">0.35</item>
+    </style>
+
+    <style name="BodyMaterialAlertDialogText" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ButtonsMaterialAlertDialog" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="ProfileTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="android:textColorHint">@color/profile_hint_text_color</item>
     </style>
 </resources>

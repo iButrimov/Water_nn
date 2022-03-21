@@ -7,6 +7,7 @@ import com.example.water_nn.data.database.AppDatabase
 import com.example.water_nn.data.repositories.OrderRepository
 import com.example.water_nn.data.repositories.PriceRepository
 import com.example.water_nn.data.repositories.UserRepository
+import com.example.water_nn.domain.common.exception.DispatcherType
 import com.example.water_nn.domain.repositories.IRepository
 import com.example.water_nn.domain.usecases.*
 import com.example.water_nn.presentation.authorisation.AuthViewModel
@@ -14,7 +15,9 @@ import com.example.water_nn.presentation.main.history.AllOrdersViewModel
 import com.example.water_nn.presentation.main.history.NewOrderViewModel
 import com.example.water_nn.presentation.main.profile.ProfileViewModel
 import com.example.water_nn.presentation.splash.SplashViewModel
+import kotlinx.coroutines.Dispatchers
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.qualifier.qualifier
 import org.koin.dsl.bind
 import org.koin.dsl.module
 
@@ -37,7 +40,7 @@ private val domainModule = module {
     factory { CheckUserCreatedUseCase(get()) }
     factory { GetPriceFullBottleUseCase(get()) }
     factory { GetPriceEmptyBottleUseCase(get()) }
-    factory { GetUserInfoUseCase(get()) }
+    factory { GetLocalUserInfoUseCase(get()) }
     factory { SaveUserInformationUseCase(get()) }
 }
 
@@ -49,10 +52,16 @@ private val viewModelModule = module {
     viewModel { ProfileViewModel(get(), get()) }
 }
 
+val coroutinesModule = module {
+    single(DispatcherType.UI.qualifier) { Dispatchers.Main }
+    single(DispatcherType.BACKGROUND.qualifier) { Dispatchers.Default }
+}
+
 val modules = listOf(
     dataModule,
     domainModule,
-    viewModelModule
+    viewModelModule,
+    coroutinesModule
 )
 
 private fun getOrdersDatabase(context: Context): AppDatabase =

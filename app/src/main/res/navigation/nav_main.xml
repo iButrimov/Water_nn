@@ -3,53 +3,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/myOrdersFragment">
+    app:startDestination="@id/catalogFragment">
 
-    <fragment
-        android:id="@+id/myOrdersFragment"
-        android:name="com.example.water_nn.presentation.main.history.AllOrdersFragment"
-        android:label="@string/ORDERS"
-        tools:layout="@layout/fragment_all_orders">
-        <action
-            android:id="@+id/action_mainFragment_to_newOrderFragment"
-            app:destination="@id/newOrderFragment"
-            app:enterAnim="@anim/enter_from_right"
-            app:exitAnim="@anim/exit_to_left"
-            app:popEnterAnim="@anim/enter_from_left"
-            app:popExitAnim="@anim/exit_to_right" />
-    </fragment>
-    <fragment
-        android:id="@+id/catalogFragment"
-        android:name="com.example.water_nn.presentation.main.shop.ShopFragment"
-        android:label="@string/CATALOG"
-        tools:layout="@layout/fragment_catalog" />
-    <fragment
-        android:id="@+id/orderFragment"
-        android:name="com.example.water_nn.presentation.main.basket.BasketFragment"
-        android:label="@string/BASKET"
-        tools:layout="@layout/fragment_basket" />
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.water_nn.presentation.main.profile.ProfileFragment"
-        android:label="@string/PROFILE"
-        tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/newOrderFragment"
         android:name="com.example.water_nn.presentation.main.history.NewOrderFragment"
-        android:label="@string/BASKET"
+        android:label="@string/ORDER"
         tools:layout="@layout/fragment_new_order">
         <argument
             android:name="id"
             app:argType="string" />
         <action
             android:id="@+id/action_newOrderFragment_to_gratitudeScreenFragment"
-            app:destination="@id/gratitudeScreenFragment"
             app:enterAnim="@anim/enter_from_top"
-            app:popExitAnim="@anim/exit_to_top" />
+            app:popExitAnim="@anim/exit_to_top"
+            app:destination="@id/gratitudeScreenFragment" />
+
     </fragment>
+
     <fragment
         android:id="@+id/gratitudeScreenFragment"
         android:name="com.example.water_nn.presentation.main.history.GratitudeScreenFragment"
-        android:label="fragment_gratitude_screen"
         tools:layout="@layout/fragment_gratitude_screen" />
+
+    <fragment
+        android:id="@+id/allOrdersFragment"
+        android:name="com.example.water_nn.presentation.main.history.AllOrdersFragment"
+        android:label="@string/ORDERS"
+        tools:layout="@layout/fragment_all_orders">
+        <action
+            android:id="@+id/action_allOrdersFragment_to_newOrderFragment"
+            app:destination="@id/newOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.water_nn.presentation.main.profile.ProfileFragment"
+        android:label="@string/PROFILE"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.example.water_nn.presentation.main.about.AboutUsFragment"
+        android:label="@string/ABOUT_US"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="com.example.water_nn.presentation.main.shop.ShopFragment"
+        android:label=""
+        tools:layout="@layout/fragment_catalog" />
+
 </navigation>

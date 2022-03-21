@@ -21,39 +21,27 @@ class UserRepository(private val sharedPref: SharedPreferences) : IRepository.Us
         return sharedPref.getBoolean(USER_IS_CREATED, false)
     }
 
-    override suspend fun getUserInfo(): UserInformation {
+    override suspend fun getLocalUserInfo(): UserInformation {
 
         val name = sharedPref.getStringOrEmpty(NAME_KEY)
-        val phoneNumber = sharedPref.getStringOrEmpty(PHONE_NUMBER_KEY)
-        val address = sharedPref.getStringOrEmpty(ADDRESS_KEY)
-        val buildingNumber = sharedPref.getStringOrEmpty(BUILDING_NUMBER_KEY)
-        val floorNumber = sharedPref.getStringOrEmpty(FLOOR_NUMBER_KEY)
-        val apartmentNumber = sharedPref.getStringOrEmpty(APARTMENT_NUMBER_KEY)
+        val email = sharedPref.getStringOrEmpty(EMAIL_KEY)
+        val phone = sharedPref.getStringOrEmpty(PHONE_NUMBER_KEY)
 
-        return UserInformation(
-            name,
-            phoneNumber,
-            address,
-            buildingNumber,
-            floorNumber,
-            apartmentNumber
-        )
+        return UserInformation(name, email, phone)
     }
 
     override suspend fun saveUserInformation(userInformation: UserInformation) {
         sharedPref.edit().apply {
             putString(NAME_KEY, userInformation.name)
-            putString(PHONE_NUMBER_KEY, userInformation.phoneNumber)
-            putString(ADDRESS_KEY, userInformation.address)
-            putString(BUILDING_NUMBER_KEY, userInformation.buildingNumber)
-            putString(FLOOR_NUMBER_KEY, userInformation.floorNumber)
-            putString(APARTMENT_NUMBER_KEY, userInformation.apartmentNumber)
+            putString(EMAIL_KEY, userInformation.email)
+            putString(PHONE_NUMBER_KEY, userInformation.phone)
             apply()
         }
     }
 
     companion object {
         const val NAME_KEY = "NAME_KEY"
+        const val EMAIL_KEY = "EMAIL_KEY"
         const val PHONE_NUMBER_KEY = "PHONE_NUMBER_KEY"
         const val ADDRESS_KEY = "ADDRESS_KEY"
         const val BUILDING_NUMBER_KEY = "BUILDING_NUMBER_KEY"

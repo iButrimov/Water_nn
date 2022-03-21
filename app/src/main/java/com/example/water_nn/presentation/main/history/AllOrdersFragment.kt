@@ -22,7 +22,7 @@ class AllOrdersFragment : Fragment(R.layout.fragment_all_orders) {
         val args = NewOrderFragmentArgs(
             id = it.toString()
         ).toBundle()
-        findNavController().navigate(R.id.action_mainFragment_to_newOrderFragment, args)
+        findNavController().navigate(R.id.action_allOrdersFragment_to_newOrderFragment, args)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,7 +49,7 @@ class AllOrdersFragment : Fragment(R.layout.fragment_all_orders) {
 
         binding.createNewOrderButton.setOnClickListener {
             val args = NewOrderFragmentArgs(id = "").toBundle()
-            findNavController().navigate(R.id.action_mainFragment_to_newOrderFragment, args)
+            findNavController().navigate(R.id.action_allOrdersFragment_to_newOrderFragment, args)
         }
 
         val itemTouchHelperCallback =

@@ -6,26 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".presentation.main.history.AllOrdersFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/color_primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/color_primary"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/ORDERS"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:id="@+id/toolbar_title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/ORDERS"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold" />-->
 
-    </androidx.appcompat.widget.Toolbar>
+<!--    </androidx.appcompat.widget.Toolbar>-->
 
     <ImageView
         android:id="@+id/order_icon"
@@ -61,7 +60,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_completed_order" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

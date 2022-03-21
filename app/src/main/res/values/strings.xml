@@ -3,10 +3,14 @@
     <string name="splash_fragment">Нестарица</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="ORDERS">Мои заказы</string>
-    <string name="CATALOG">Каталог</string>
-    <string name="BASKET">Корзина</string>
     <string name="PROFILE">Профиль</string>
+    <string name="ORDERS">Заказы</string>
+    <string name="CATALOG">Каталог</string>
+    <string name="ORDER">Заказ</string>
+    <string name="SHARE">Поделиться</string>
+    <string name="CONTACT_US">Связаться с нами</string>
+    <string name="ABOUT_US">О нас</string>
+    <string name="COMMUNICATE_HEADER">Контакты</string>
 
     <string name="AUTH_SCREEN">Экран авторизации</string>
     <string name="AUTH_GREETING_TEXT">Привет!</string>
@@ -21,6 +25,7 @@
 
     <string name="PROFILE_USER_INFO_HEADER">Данные пользователя</string>
     <string name="PROFILE_NAME_HINT">Имя</string>
+    <string name="PROFILE_EMAIL_HINT">Почта</string>
     <string name="PROFILE_PHONE_NUMBER_HINT">Телефон</string>
     <string name="PROFILE_ADDRESS_DELIVERY_HEADER">Адрес доставки</string>
     <string name="PROFILE_STREET_HINT">Улица</string>
@@ -29,6 +34,8 @@
     <string name="PROFILE_APARTMENT_NUMBER_HINT">Кв/офис</string>
     <string name="PROFILE_PAYMENT_METHOD_HEADER">Способ оплаты</string>
     <string name="SAVE_BUTTON_TEXT">Сохранить</string>
+    <string name="LOGOUT">Выход</string>
+    <string name="DATA_SAVED_TOAST_MESSAGE">Ваши данные сохранены</string>
 
     <string name="ORDERS_EMPTY_LIST_TEXT">У вас пока нет заказов</string>
 
@@ -45,8 +52,18 @@
     <string name="MOVE_TO_ORDER">Перейти к заказу</string>
     <string name="today">Сегодня</string>
     <string name="tomorrow">Завтра</string>
-    <string name="morning_9_12">9-12</string>
-    <string name="noon_12_15">12-15</string>
-    <string name="afternoon_15_18">15-18</string>
-    <string name="evening_18_21">18-21</string>
+    <string name="morning_9_12">9–12</string>
+    <string name="noon_12_15">12–15</string>
+    <string name="afternoon_15_18">15–18</string>
+    <string name="evening_18_21">18–21</string>
+
+    <string name="dialog_btn_ok">OK</string>
+    <string name="dialog_btn_cancel">Cancel</string>
+    <string name="dialog_btn_yes">Yes</string>
+    <string name="dialog_btn_no">No</string>
+
+    <string name="default_error_title">Error</string>
+    <string name="exception_unknown_error">Unknown error</string>
+    <string name="connection_exception">Please, check the Internet connection</string>
+    <string name="code_error">Something goes wrong. The error code: %d</string>
 </resources>

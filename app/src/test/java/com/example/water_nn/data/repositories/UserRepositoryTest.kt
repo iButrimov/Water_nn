@@ -63,7 +63,7 @@ class UserRepositoryTest {
         coEvery { sharedPreferences.getStringOrEmpty(UserRepository.FLOOR_NUMBER_KEY) } returns "Floor"
         coEvery { sharedPreferences.getStringOrEmpty(UserRepository.APARTMENT_NUMBER_KEY) } returns "Apartment"
 
-        val result = repository.getUserInfo()
+        val result = repository.getLocalUserInfo()
 
         coVerify { sharedPreferences.getStringOrEmpty(UserRepository.NAME_KEY) }
         coVerify { sharedPreferences.getStringOrEmpty(UserRepository.PHONE_NUMBER_KEY) }
@@ -76,10 +76,7 @@ class UserRepositoryTest {
             result, UserInformation(
                 "Ivan",
                 "Phone",
-                "Address",
-                "Building",
-                "Floor",
-                "Apartment"
+                "Address"
             )
         )
     }
@@ -92,18 +89,12 @@ class UserRepositoryTest {
 
         coEvery { sharedPreferences.edit().apply() } returns Unit
         coEvery { userInformation.name } returns "Ivan"
-        coEvery { userInformation.phoneNumber } returns "Phone"
-        coEvery { userInformation.address } returns "Address"
-        coEvery { userInformation.buildingNumber } returns "Building"
-        coEvery { userInformation.floorNumber } returns "Floor"
-        coEvery { userInformation.apartmentNumber } returns "Apartment"
+        coEvery { userInformation.email } returns "email@email.com"
+        coEvery { userInformation.phone } returns "Phone"
 
         coEvery { sharedPreferences.edit().putString(UserRepository.NAME_KEY, "Ivan") } returns editor
+        coEvery { sharedPreferences.edit().putString(UserRepository.EMAIL_KEY, "email@email.com") } returns editor
         coEvery { sharedPreferences.edit().putString(UserRepository.PHONE_NUMBER_KEY, "Phone") } returns editor
-        coEvery { sharedPreferences.edit().putString(UserRepository.ADDRESS_KEY, "Address") } returns editor
-        coEvery { sharedPreferences.edit().putString(UserRepository.BUILDING_NUMBER_KEY, "Building") } returns editor
-        coEvery { sharedPreferences.edit().putString(UserRepository.FLOOR_NUMBER_KEY, "Floor") } returns editor
-        coEvery { sharedPreferences.edit().putString(UserRepository.APARTMENT_NUMBER_KEY, "Apartment") } returns editor
 
         repository.saveUserInformation(userInformation)
 

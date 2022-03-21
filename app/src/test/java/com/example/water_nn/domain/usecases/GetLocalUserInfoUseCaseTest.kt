@@ -10,15 +10,15 @@ import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 
-class GetUserInfoUseCaseTest {
+class GetLocalUserInfoUseCaseTest {
 
     private val repository = mockk<IRepository.UserRepository>()
-    private lateinit var getUserInfoUseCase: GetUserInfoUseCase
+    private lateinit var getLocalUserInfoUseCase: GetLocalUserInfoUseCase
 
 
     @Before
     fun init() {
-        getUserInfoUseCase = GetUserInfoUseCase(repository)
+        getLocalUserInfoUseCase = GetLocalUserInfoUseCase(repository)
     }
 
     @Test
@@ -26,11 +26,11 @@ class GetUserInfoUseCaseTest {
 
         val userInfoFromRepo = mockk<UserInformation>()
 
-        coEvery { repository.getUserInfo() } returns userInfoFromRepo
+        coEvery { repository.getLocalUserInfo() } returns userInfoFromRepo
 
-        val userInformation = getUserInfoUseCase.execute()
+        val userInformation = getLocalUserInfoUseCase.invoke()
 
-        coVerify { repository.getUserInfo() }
+        coVerify { repository.getLocalUserInfo() }
 
         assertEquals(userInfoFromRepo, userInformation)
     }

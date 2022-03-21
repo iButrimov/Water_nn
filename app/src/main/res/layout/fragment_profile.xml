@@ -2,76 +2,91 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D8D7D7"
+    android:focusableInTouchMode="true"
     tools:context=".presentation.main.profile.ProfileFragment">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
+    <include
+        android:id="@+id/loading"
+        layout="@layout/full_screen_loading"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/color_primary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/PROFILE"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </com.google.android.material.appbar.MaterialToolbar>
-
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameField"
+            style="@style/ProfileTextInputLayoutStyle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="20sp">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
 
-            <TextView
-                android:id="@+id/user_info_header"
-                style="@style/ProfileHeadersText"
-                android:layout_marginVertical="@dimen/headers_vertical_margin"
-                android:text="@string/PROFILE_USER_INFO_HEADER" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/PROFILE_NAME_HINT"
+                android:inputType="text"
+                android:textSize="18sp" />
 
-            <include layout="@layout/user_info" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/address_delivery_header"
-                style="@style/ProfileHeadersText"
-                android:layout_marginVertical="@dimen/headers_vertical_margin"
-                android:text="@string/PROFILE_ADDRESS_DELIVERY_HEADER" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailField"
+            style="@style/ProfileTextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameField"
+            app:layout_constraintVertical_chainStyle="packed">
 
-            <include layout="@layout/delivery_info" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/PROFILE_EMAIL_HINT"
+                android:inputType="textEmailAddress"
+                android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/payment_method_header"
-                style="@style/ProfileHeadersText"
-                android:layout_marginVertical="@dimen/headers_vertical_margin"
-                android:text="@string/PROFILE_PAYMENT_METHOD_HEADER" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/save_btn"
-                style="@style/Button.Contained"
-                android:layout_marginBottom="18dp"
-                android:background="@drawable/registration_button"
-                android:enabled="false"
-                android:text="@string/SAVE_BUTTON_TEXT" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
-    </ScrollView>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneField"
+            style="@style/ProfileTextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailField"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/PROFILE_PHONE_NUMBER_HINT"
+                android:inputType="phone"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

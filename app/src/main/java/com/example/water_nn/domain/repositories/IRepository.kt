@@ -1,7 +1,8 @@
 package com.example.water_nn.domain.repositories
 
 import com.example.water_nn.data.database.entity.Order
-import com.example.water_nn.domain.models.*
+import com.example.water_nn.domain.models.AuthData
+import com.example.water_nn.domain.models.UserInformation
 import kotlinx.coroutines.flow.Flow
 
 interface IRepository {
@@ -16,7 +17,7 @@ interface IRepository {
     interface UserRepository {
         suspend fun createNewUser(authData: AuthData)
         suspend fun checkUserCreated(): Boolean
-        suspend fun getUserInfo(): UserInformation
+        suspend fun getLocalUserInfo(): UserInformation
         suspend fun saveUserInformation(userInformation: UserInformation)
     }
 

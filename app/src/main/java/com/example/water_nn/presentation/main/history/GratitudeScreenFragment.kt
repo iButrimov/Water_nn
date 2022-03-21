@@ -10,6 +10,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.water_nn.R
 import com.example.water_nn.databinding.FragmentGratitudeScreenBinding
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.view.*
 
 class GratitudeScreenFragment : Fragment(R.layout.fragment_gratitude_screen) {
 
@@ -18,11 +19,11 @@ class GratitudeScreenFragment : Fragment(R.layout.fragment_gratitude_screen) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        requireActivity().bottom_navigation.visibility = GONE
+        requireActivity().app_bar_main.toolbar.visibility = GONE
 
         binding.continueBtn.setOnClickListener {
             findNavController().popBackStack(R.id.newOrderFragment, true)
-            requireActivity().bottom_navigation.visibility = VISIBLE
+            requireActivity().app_bar_main.toolbar.visibility = VISIBLE
         }
     }
 }
