@@ -69,8 +69,7 @@
     <style name="Divider">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
-        <item name="android:background" tools:ignore="PrivateResource">?attr/controlBackground
-        </item>
+        <item name="android:background" tools:ignore="PrivateResource">?attr/controlBackground</item>
     </style>
 
     <style name="DialogHeaderStyle" parent="Widget.AppCompat.TextView">

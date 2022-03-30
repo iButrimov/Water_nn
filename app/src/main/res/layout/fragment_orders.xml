@@ -3,31 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.main.history.AllOrdersFragment">
-
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--        android:id="@+id/toolbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@color/color_primary"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/toolbar_title"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/ORDERS"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textStyle="bold" />-->
-
-<!--    </androidx.appcompat.widget.Toolbar>-->
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/order_icon"
+        android:id="@+id/not_orders_yet_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/ORDERS_EMPTY_LIST_TEXT"
@@ -39,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/not_orders_yet"
+        android:id="@+id/not_orders_yet_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
@@ -50,10 +29,10 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/order_icon" />
+        app:layout_constraintTop_toBottomOf="@+id/not_orders_yet_icon" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/allOrdersRecyclerView"
+        android:id="@+id/rv"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

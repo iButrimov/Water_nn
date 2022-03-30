@@ -217,8 +217,8 @@ class NewOrderViewModel(
         priceEmptyBottle = (qtyFullBottle - qtyEmptyBottle) * emptyBottlePrice
     }
 
-    private fun calculateTotalPrice(): Double {
-        return priceFullBottle + priceEmptyBottle
+    private fun calculateTotalPrice(): Int {
+        return (priceFullBottle + priceEmptyBottle).toInt()
     }
 
     override suspend fun isOrderDataValid(orderData: OrderData): Boolean {

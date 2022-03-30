@@ -22,7 +22,7 @@ class GetAllOrdersUseCaseTest {
     @Test
     fun `get all orders success`() = runBlocking {
         coEvery { repository.getAllOrders() } returns flowOf()
-        getAllOrdersUseCase.execute()
+        getAllOrdersUseCase.invoke()
         coVerify { repository.getAllOrders() }
     }
 }
