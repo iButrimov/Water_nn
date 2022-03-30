@@ -37,7 +37,10 @@
     <string name="LOGOUT">Выход</string>
     <string name="DATA_SAVED_TOAST_MESSAGE">Ваши данные сохранены</string>
 
-    <string name="ORDERS_EMPTY_LIST_TEXT">У вас пока нет заказов</string>
+    <string name="ORDERS_EMPTY_LIST_TEXT">У вас пока не было заказов</string>
+    <string name="ORDERS_ADDRESS_DELIVERY_TEXT">ул. %1$s, д.%2$s, кв.%3$s,эт.%4$s</string>
+    <string name="ORDERS_BOTTLE_QTY_TEXT">%1$d бут.</string>
+    <string name="ORDERS_TOTAL_PRICE_TEXT">%1$d ₽</string>
 
     <string name="GRATITUDE_UPPER_TEXT">Спасибо!</string>
     <string name="GRATITUDE_LOWER_TEXT">Ваш заказ успешно создан!</string>

@@ -9,7 +9,7 @@
             android:icon="@drawable/ic_profile"
             android:title="@string/PROFILE" />
         <item
-            android:id="@+id/allOrdersFragment"
+            android:id="@+id/ordersFragment"
             android:icon="@drawable/ic_orders_history"
             android:title="@string/ORDERS" />
     </group>

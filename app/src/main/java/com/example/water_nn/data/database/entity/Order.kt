@@ -19,17 +19,8 @@ data class Order(
     @ColumnInfo(name = "quantityEmptyBottle") val quantityEmptyBottle: Int,
     @ColumnInfo(name = "waterPrice") val waterPrice: Double = 180.0,
     @ColumnInfo(name = "emptyBottlePrice") val emptyBottlePrice: Double = 200.0,
-//    @Embedded val shopOrder: List<AdditionalItem>,
     @ColumnInfo(name = "deliveryDay") val deliveryDay: DeliveryDay,
     @ColumnInfo(name = "deliveryTime") val deliveryTime: List<DeliveryTime>,
     @ColumnInfo(name = "description") val comment: String,
-    @ColumnInfo(name = "totalPrice") val totalPrice: Double,
-)
-
-data class AdditionalItem(
-    val id: Int,
-    val name: String,
-    val picture: String,
-    val price: Double, //цена сохраняется старой
-    val quantity: Int
+    @ColumnInfo(name = "totalPrice") val totalPrice: Int,
 )

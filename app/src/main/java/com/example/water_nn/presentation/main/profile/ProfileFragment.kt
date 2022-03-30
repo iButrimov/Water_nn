@@ -13,6 +13,7 @@ import com.example.water_nn.domain.models.UserInformation
 import com.example.water_nn.presentation.BaseFragment
 import com.example.water_nn.presentation.OneShot
 import com.example.water_nn.presentation.views.afterTextChanged
+import com.example.water_nn.presentation.views.hideSoftKeyboard
 import com.example.water_nn.presentation.views.setVisibility
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.example.water_nn.presentation.main.profile.ProfileEvent as Event
@@ -105,6 +106,8 @@ class ProfileFragment : BaseFragment<ViewModel, State, Event>(R.layout.fragment_
     }
 
     private fun saveChanges() {
+        requireView().hideSoftKeyboard()
+
         val userInformation = UserInformation(
             name = binding.name.text.toString(),
             email = binding.email.text.toString(),
