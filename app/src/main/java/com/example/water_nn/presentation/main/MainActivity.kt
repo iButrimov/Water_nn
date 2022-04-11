@@ -1,6 +1,8 @@
 package com.example.water_nn.presentation.main
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -14,7 +16,7 @@ import com.example.water_nn.R
 import com.example.water_nn.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : AppCompatActivity(R.layout.activity_main), ToolbarElementControl {
 
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -48,5 +50,26 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         appBarConfig: AppBarConfiguration
     ) {
         setupActionBarWithNavController(navController, appBarConfig)
+    }
+
+    override fun setAddressDeliveryView() {
+        with(binding.appBarMain.addressDelivery) {
+            visibility = View.VISIBLE
+            setListener {
+                Toast.makeText(this@MainActivity, "Toolbar clicked", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    override fun removeAddressDeliveryView() {
+        binding.appBarMain.addressDelivery.visibility = View.GONE
+    }
+
+    override fun showActionBar() {
+        binding.appBarMain.toolbar.visibility = View.VISIBLE
+    }
+
+    override fun hideActionBar() {
+        binding.appBarMain.toolbar.visibility = View.GONE
     }
 }

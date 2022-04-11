@@ -5,7 +5,7 @@
 
     <string name="PROFILE">Профиль</string>
     <string name="ORDERS">Заказы</string>
-    <string name="CATALOG">Каталог</string>
+    <string name="MAIN">Главная</string>
     <string name="ORDER">Заказ</string>
     <string name="SHARE">Поделиться</string>
     <string name="CONTACT_US">Связаться с нами</string>
@@ -69,4 +69,6 @@
     <string name="exception_unknown_error">Unknown error</string>
     <string name="connection_exception">Please, check the Internet connection</string>
     <string name="code_error">Something goes wrong. The error code: %d</string>
+
+    <string name="delivery_address">Адрес доставки</string>
 </resources>
