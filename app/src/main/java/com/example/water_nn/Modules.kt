@@ -12,6 +12,7 @@ import com.example.water_nn.domain.repositories.IRepository
 import com.example.water_nn.domain.usecases.*
 import com.example.water_nn.presentation.authorisation.AuthViewModel
 import com.example.water_nn.presentation.main.history.NewOrderViewModel
+import com.example.water_nn.presentation.main.mainscreen.MainScreenViewModel
 import com.example.water_nn.presentation.main.orders.OrdersViewModel
 import com.example.water_nn.presentation.main.profile.ProfileViewModel
 import com.example.water_nn.presentation.splash.SplashViewModel
@@ -50,6 +51,7 @@ private val viewModelModule = module {
     viewModel { SplashViewModel(get()) }
     viewModel { ProfileViewModel(get(), get()) }
     viewModel { OrdersViewModel(get()) }
+    viewModel { MainScreenViewModel() }
 }
 
 val coroutinesModule = module {

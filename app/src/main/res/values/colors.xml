@@ -26,6 +26,8 @@
     <color name="profile_hint_text_color">#AEADAD</color>
     <color name="profile_underline_color">#D1D1D1</color>
 
+    <color name="view_pressed_selected">#E2E2E2</color>
+
     <color name="main_text_color">#373737</color>
 
 </resources>
