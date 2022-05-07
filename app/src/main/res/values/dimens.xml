@@ -2,4 +2,9 @@
 <resources>
     <dimen name="headers_vertical_margin">18dp</dimen>
     <dimen name="full_screen_progress_size">48dp</dimen>
+
+    <dimen name="button_text">20sp</dimen>
+
+    <dimen name="bottom_sheet_padding_normal">14dp</dimen>
+    <dimen name="bottom_sheet_text_header">24sp</dimen>
 </resources>

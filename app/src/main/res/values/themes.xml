@@ -27,10 +27,14 @@
     <style name="Button.Contained" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:minHeight">56dp</item>
-        <item name="cornerRadius">28dp</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">@dimen/button_text</item>
         <item name="android:textAllCaps">false</item>
+        <item name="materialThemeOverlay">@style/ColorPrimaryButtonThemeOverlay</item>
+    </style>
+
+    <style name="ColorPrimaryButtonThemeOverlay">
+        <item name="colorPrimary">@color/color_primary</item>
+
     </style>
 
     <style name="ProfileHeadersText">
@@ -102,4 +106,14 @@
         <item name="boxStrokeWidth">1dp</item>
         <item name="android:textColorHint">@color/profile_hint_text_color</item>
     </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+        <item name="android:colorEdgeEffect">@color/color_primary</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_background</item>
+    </style>
+
 </resources>

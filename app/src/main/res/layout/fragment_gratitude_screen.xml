@@ -57,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_margin="32dp"
-        android:background="@drawable/registration_button"
+        android:background="@drawable/app_confirm_button"
         android:backgroundTint="@color/white"
         android:text="@string/GRATITUDE_CONTINUE_BUTTON_TEXT"
         android:textAllCaps="false"

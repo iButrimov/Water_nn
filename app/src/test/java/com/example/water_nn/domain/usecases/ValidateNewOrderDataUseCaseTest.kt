@@ -21,13 +21,17 @@ class ValidateNewOrderDataUseCaseTest {
     fun `validate new order success`() {
         val dataOrder = OrderData(
             name = "Ivan",
-            address = "Lenina",
-            phoneNumber = "123456789",
-            quantityEmptyBottle = 2,
-            quantityFullBottle = 2,
+            address = "qwe",
+            phoneNumber = "+71234567890",
+            street = "Street1",
+            building = "100",
+            floor = "10",
+            apartment = "100",
+            quantityFullBottle = 1,
+            quantityEmptyBottle = 1,
             deliveryDay = DeliveryDay.TOMORROW,
-            deliveryTime = listOf(DeliveryTime.AFTERNOON),
-            comment = ""
+            deliveryTime = listOf(DeliveryTime.EVENING, DeliveryTime.AFTERNOON),
+            comment = "456"
         )
 
         val result = validateNewOrderDataUseCase.execute(dataOrder)
@@ -40,13 +44,17 @@ class ValidateNewOrderDataUseCaseTest {
     fun `validate new order failure`() {
         val dataOrder = OrderData(
             name = "Ivan",
-            address = "",
-            phoneNumber = "",
-            quantityEmptyBottle = 2,
-            quantityFullBottle = 2,
+            address = "qwe",
+            phoneNumber = "+71234567890",
+            street = "Street1",
+            building = "100",
+            floor = "10",
+            apartment = "100",
+            quantityFullBottle = 1,
+            quantityEmptyBottle = 1,
             deliveryDay = DeliveryDay.TOMORROW,
-            deliveryTime = listOf(DeliveryTime.AFTERNOON),
-            comment = ""
+            deliveryTime = listOf(DeliveryTime.EVENING, DeliveryTime.AFTERNOON),
+            comment = "456"
         )
 
         val result = validateNewOrderDataUseCase.execute(dataOrder)

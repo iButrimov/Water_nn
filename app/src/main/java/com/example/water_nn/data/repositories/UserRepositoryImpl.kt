@@ -6,7 +6,7 @@ import com.example.water_nn.domain.models.UserInformation
 import com.example.water_nn.domain.repositories.IRepository
 import com.example.water_nn.presentation.extentions.getStringOrEmpty
 
-class UserRepository(private val sharedPref: SharedPreferences) : IRepository.UserRepository {
+class UserRepositoryImpl(private val sharedPref: SharedPreferences) : IRepository.UserRepository {
 
     override suspend fun createNewUser(authData: AuthData) {
         sharedPref.edit().apply {

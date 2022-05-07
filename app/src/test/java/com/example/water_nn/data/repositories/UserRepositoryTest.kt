@@ -14,22 +14,22 @@ import org.junit.Test
 
 class UserRepositoryTest {
 
-    private lateinit var repository: UserRepository
+    private lateinit var repository: UserRepositoryImpl
     private val sharedPreferences = mockk<SharedPreferences>()
 
     @Before
     fun init() {
-        repository = UserRepository(sharedPreferences)
+        repository = UserRepositoryImpl(sharedPreferences)
     }
 
     @Test
     fun `check user created returns true`() = runBlocking {
 
-        coEvery { sharedPreferences.getBoolean(UserRepository.USER_IS_CREATED, false) } returns true
+        coEvery { sharedPreferences.getBoolean(UserRepositoryImpl.USER_IS_CREATED, false) } returns true
 
         val result = repository.checkUserCreated()
 
-        coVerify { sharedPreferences.getBoolean(UserRepository.USER_IS_CREATED, false) }
+        coVerify { sharedPreferences.getBoolean(UserRepositoryImpl.USER_IS_CREATED, false) }
 
         assertEquals(result, true)
     }
@@ -43,9 +43,9 @@ class UserRepositoryTest {
         coEvery { sharedPreferences.edit().apply() } returns Unit
         coEvery { authData.name } returns "Ivan"
         coEvery { authData.phoneNumber } returns "Phone"
-        coEvery { sharedPreferences.edit().putString(UserRepository.NAME_KEY, "Ivan") } returns editor
-        coEvery { sharedPreferences.edit().putString(UserRepository.PHONE_NUMBER_KEY, "Phone") } returns editor
-        coEvery { sharedPreferences.edit().putBoolean(UserRepository.USER_IS_CREATED, true) } returns editor
+        coEvery { sharedPreferences.edit().putString(UserRepositoryImpl.NAME_KEY, "Ivan") } returns editor
+        coEvery { sharedPreferences.edit().putString(UserRepositoryImpl.PHONE_NUMBER_KEY, "Phone") } returns editor
+        coEvery { sharedPreferences.edit().putBoolean(UserRepositoryImpl.USER_IS_CREATED, true) } returns editor
 
         repository.createNewUser(authData)
 
@@ -56,21 +56,21 @@ class UserRepositoryTest {
     @Test
     fun `get user info success`() = runBlocking {
 
-        coEvery { sharedPreferences.getStringOrEmpty(UserRepository.NAME_KEY) } returns "Ivan"
-        coEvery { sharedPreferences.getStringOrEmpty(UserRepository.PHONE_NUMBER_KEY) } returns "Phone"
-        coEvery { sharedPreferences.getStringOrEmpty(UserRepository.ADDRESS_KEY) } returns "Address"
-        coEvery { sharedPreferences.getStringOrEmpty(UserRepository.BUILDING_NUMBER_KEY) } returns "Building"
-        coEvery { sharedPreferences.getStringOrEmpty(UserRepository.FLOOR_NUMBER_KEY) } returns "Floor"
-        coEvery { sharedPreferences.getStringOrEmpty(UserRepository.APARTMENT_NUMBER_KEY) } returns "Apartment"
+        coEvery { sharedPreferences.getStringOrEmpty(UserRepositoryImpl.NAME_KEY) } returns "Ivan"
+        coEvery { sharedPreferences.getStringOrEmpty(UserRepositoryImpl.PHONE_NUMBER_KEY) } returns "Phone"
+        coEvery { sharedPreferences.getStringOrEmpty(UserRepositoryImpl.ADDRESS_KEY) } returns "Address"
+        coEvery { sharedPreferences.getStringOrEmpty(UserRepositoryImpl.BUILDING_NUMBER_KEY) } returns "Building"
+        coEvery { sharedPreferences.getStringOrEmpty(UserRepositoryImpl.FLOOR_NUMBER_KEY) } returns "Floor"
+        coEvery { sharedPreferences.getStringOrEmpty(UserRepositoryImpl.APARTMENT_NUMBER_KEY) } returns "Apartment"
 
         val result = repository.getLocalUserInfo()
 
-        coVerify { sharedPreferences.getStringOrEmpty(UserRepository.NAME_KEY) }
-        coVerify { sharedPreferences.getStringOrEmpty(UserRepository.PHONE_NUMBER_KEY) }
-        coVerify { sharedPreferences.getStringOrEmpty(UserRepository.ADDRESS_KEY) }
-        coVerify { sharedPreferences.getStringOrEmpty(UserRepository.BUILDING_NUMBER_KEY) }
-        coVerify { sharedPreferences.getStringOrEmpty(UserRepository.FLOOR_NUMBER_KEY) }
-        coVerify { sharedPreferences.getStringOrEmpty(UserRepository.APARTMENT_NUMBER_KEY) }
+        coVerify { sharedPreferences.getStringOrEmpty(UserRepositoryImpl.NAME_KEY) }
+        coVerify { sharedPreferences.getStringOrEmpty(UserRepositoryImpl.PHONE_NUMBER_KEY) }
+        coVerify { sharedPreferences.getStringOrEmpty(UserRepositoryImpl.ADDRESS_KEY) }
+        coVerify { sharedPreferences.getStringOrEmpty(UserRepositoryImpl.BUILDING_NUMBER_KEY) }
+        coVerify { sharedPreferences.getStringOrEmpty(UserRepositoryImpl.FLOOR_NUMBER_KEY) }
+        coVerify { sharedPreferences.getStringOrEmpty(UserRepositoryImpl.APARTMENT_NUMBER_KEY) }
 
         assertEquals(
             result, UserInformation(
@@ -92,9 +92,9 @@ class UserRepositoryTest {
         coEvery { userInformation.email } returns "email@email.com"
         coEvery { userInformation.phone } returns "Phone"
 
-        coEvery { sharedPreferences.edit().putString(UserRepository.NAME_KEY, "Ivan") } returns editor
-        coEvery { sharedPreferences.edit().putString(UserRepository.EMAIL_KEY, "email@email.com") } returns editor
-        coEvery { sharedPreferences.edit().putString(UserRepository.PHONE_NUMBER_KEY, "Phone") } returns editor
+        coEvery { sharedPreferences.edit().putString(UserRepositoryImpl.NAME_KEY, "Ivan") } returns editor
+        coEvery { sharedPreferences.edit().putString(UserRepositoryImpl.EMAIL_KEY, "email@email.com") } returns editor
+        coEvery { sharedPreferences.edit().putString(UserRepositoryImpl.PHONE_NUMBER_KEY, "Phone") } returns editor
 
         repository.saveUserInformation(userInformation)
 

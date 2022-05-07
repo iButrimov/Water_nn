@@ -5,7 +5,7 @@ import com.example.water_nn.data.database.entity.Order
 import com.example.water_nn.domain.repositories.IRepository
 import kotlinx.coroutines.flow.Flow
 
-class OrderRepository(private val dataBase: AppDatabase) :
+class OrderRepositoryImpl(private val dataBase: AppDatabase) :
     IRepository.OrderRepository {
 
     override suspend fun addOrder(order: Order) {

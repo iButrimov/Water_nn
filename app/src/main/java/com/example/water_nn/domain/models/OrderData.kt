@@ -10,7 +10,6 @@ data class OrderData(
     val apartment: String,
     val quantityFullBottle: Int,
     val quantityEmptyBottle: Int,
-//    @Embedded val shopOrder: List<AdditionalItem>,
     val deliveryDay: DeliveryDay,
     val deliveryTime: List<DeliveryTime>,
     val comment: String,
