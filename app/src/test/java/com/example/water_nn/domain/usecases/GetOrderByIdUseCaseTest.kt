@@ -26,7 +26,7 @@ class GetOrderByIdUseCaseTest {
         val order = mockk<Order>()
 
         coEvery { repository.getOrderById(id) } returns order
-        getOrderByIdUseCase.execute(id)
+        getOrderByIdUseCase.invoke(id)
         coVerify { repository.getOrderById(id) }
     }
 }

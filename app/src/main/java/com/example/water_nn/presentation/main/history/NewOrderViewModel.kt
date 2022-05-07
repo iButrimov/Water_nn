@@ -113,7 +113,7 @@ class NewOrderViewModel(
     override fun getOrderById(id: String) {
         viewModelScope.launch(Dispatchers.IO) {
             val order = viewModelScope.async(Dispatchers.IO) {
-                return@async getOrderByIdUseCase.execute(id)
+                return@async getOrderByIdUseCase.invoke(id)
             }.await()
             name = order.name ?: ""
             address = order.address

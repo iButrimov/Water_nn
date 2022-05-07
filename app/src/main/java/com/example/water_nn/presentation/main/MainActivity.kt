@@ -14,6 +14,7 @@ import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.water_nn.R
 import com.example.water_nn.databinding.ActivityMainBinding
+import com.example.water_nn.presentation.main.mainscreen.address.ActionBottom
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(R.layout.activity_main), ToolbarElementControl {
@@ -56,9 +57,16 @@ class MainActivity : AppCompatActivity(R.layout.activity_main), ToolbarElementCo
         with(binding.appBarMain.addressDelivery) {
             visibility = View.VISIBLE
             setListener {
+                openBottomSheetDialog()
                 Toast.makeText(this@MainActivity, "Toolbar clicked", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun openBottomSheetDialog() {
+
+        val bottomSheetDialog = ActionBottom.newInstance()
+        bottomSheetDialog.show(supportFragmentManager, ActionBottom.TAG )
     }
 
     override fun removeAddressDeliveryView() {

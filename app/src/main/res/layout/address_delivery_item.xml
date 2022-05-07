@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/view_clickable_selector"
+    android:orientation="horizontal"
+    android:padding="@dimen/bottom_sheet_padding_normal">
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/addressSelectCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:button="@drawable/selector_address_delivery_checkbox"
+        android:checked="false"
+        android:clickable="false"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        tools:checked="true" />
+
+    <TextView
+        android:id="@+id/addressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/bottom_sheet_padding_normal"
+        tools:text="Address" />
+</LinearLayout>

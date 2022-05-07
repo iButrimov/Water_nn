@@ -50,7 +50,7 @@
                 android:id="@+id/register_btn"
                 style="@style/Button.Contained"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/registration_button"
+                android:background="@drawable/app_confirm_button"
                 android:text="@string/AUTH_REGISTRATION_BUTTON_TEXT"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

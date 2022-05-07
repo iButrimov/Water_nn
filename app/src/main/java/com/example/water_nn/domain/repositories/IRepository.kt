@@ -1,5 +1,6 @@
 package com.example.water_nn.domain.repositories
 
+import com.example.water_nn.data.database.entity.Address
 import com.example.water_nn.data.database.entity.Order
 import com.example.water_nn.domain.models.AuthData
 import com.example.water_nn.domain.models.UserInformation
@@ -24,5 +25,17 @@ interface IRepository {
     interface PriceRepository {
         fun getPriceFullBottle(): Double
         fun getPriceEmptyBottle(): Double
+    }
+
+    interface AddressRepository {
+        suspend fun addAddress(address: Address)
+        suspend fun confirmAddress()
+        suspend fun deleteAddress(address: Address)
+        suspend fun getAddressById(id: String): Address
+        suspend fun getAddressList(): List<Address>
+        suspend fun getAddressListBySelected(): List<Address>
+        suspend fun getLastSavedAddress(): Address
+        suspend fun saveSelectedAddress(address: Address)
+        suspend fun changeSelectedAddress(address: Address)
     }
 }

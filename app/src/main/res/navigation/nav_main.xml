@@ -50,6 +50,20 @@
         android:id="@+id/mainScreen"
         android:name="com.example.water_nn.presentation.main.mainscreen.MainScreenFragment"
         android:label=""
-        tools:layout="@layout/fragment_main_screen" />
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/action_mainScreen_to_addressDeliveryBottomSheetFragment"
+            app:destination="@id/addressDeliveryBottomSheetFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/openAddressDeliveryBottomSheetFragment"
+        app:destination="@id/addressDeliveryBottomSheetFragment"/>
+
+    <dialog
+        android:id="@+id/addressDeliveryBottomSheetFragment"
+        android:name="com.example.water_nn.presentation.main.mainscreen.address.AddressBottomSheetFragment"
+        android:label="fragment_address_delivery_bottom_sheet"
+        tools:layout="@layout/fragment_address_delivery_bottom_sheet" />
 
 </navigation>

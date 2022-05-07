@@ -43,7 +43,11 @@ class NewOrderViewModelTest : BaseViewModelTest() {
         val orderData = OrderData(
             name = "Ivan",
             address = "qwe",
-            phoneNumber = "123",
+            phoneNumber = "+71234567890",
+            street = "Street1",
+            building = "100",
+            floor = "10",
+            apartment = "100",
             quantityFullBottle = 1,
             quantityEmptyBottle = 1,
             deliveryDay = DeliveryDay.TOMORROW,
@@ -59,6 +63,10 @@ class NewOrderViewModelTest : BaseViewModelTest() {
                 name = name,
                 address = address,
                 phoneNumber = phoneNumber,
+                street = street,
+                building = building,
+                floor = floor,
+                apartment = apartment,
                 quantityWater = quantityFullBottle,
                 quantityEmptyBottle = quantityEmptyBottle,
                 waterPrice = 0.0,
@@ -66,7 +74,7 @@ class NewOrderViewModelTest : BaseViewModelTest() {
                 deliveryDay = deliveryDay,
                 deliveryTime = deliveryTime,
                 comment = comment,
-                totalPrice = 0.0
+                totalPrice = 0
             )
         }
 
@@ -81,7 +89,7 @@ class NewOrderViewModelTest : BaseViewModelTest() {
     fun `get order by id success`() {
         val id = "1"
         newOrderViewModel.getOrderById(id)
-        coVerify { getOrderByIdUseCase.execute(id) }
+        coVerify { getOrderByIdUseCase.invoke(id) }
 
     }
 
